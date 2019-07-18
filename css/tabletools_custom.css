@@ -1,0 +1,65 @@
+a.DTTT_button_pdf {
+	background-image: url('../img/agp/pdf.png') !important;
+}
+
+a.DTTT_button_pdf:hover {
+	background-image: url('../img/agp/pdf.png') !important;
+}
+
+a.DTTT_button_xls {
+	background-image: url('../img/agp/xls.png') !important;
+}
+
+a.DTTT_button_xls:hover {
+	background-image: url('../img/agp/xls.png') !important;
+}
+
+a.DTTT_button span {
+	display:none;
+}
+
+a.DTTT_button {
+	margin: 0;
+	padding: 0;
+	border: none;
+	background-color: transparent;
+	width: 20px;
+	height: 20px;
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
+	-ms-border-radius: 0px;
+	-o-border-radius: 0px;
+	border-radius: 0px;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	-ms-box-shadow: none;
+	-o-box-shadow: none;
+	box-shadow: none;
+}
+
+a.DTTT_button:hover {
+	margin: 0;
+	padding: 0;
+	border: none;
+	background-color: transparent;
+	width: 20px;
+	height: 20px;
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
+	-ms-border-radius: 0px;
+	-o-border-radius: 0px;
+	border-radius: 0px;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	-ms-box-shadow: none;
+	-o-box-shadow: none;
+	box-shadow: none;
+}
+
+
+
+div.dttt_container {
+	margin-bottom: 0px;
+	margin-left: 6px;
+	margin-right: 0px;
+}

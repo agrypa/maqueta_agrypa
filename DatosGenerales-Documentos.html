@@ -1,0 +1,4078 @@
+
+
+
+
+
+
+
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+<HEAD>
+<META http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<META name="GENERATOR" content="IBM Software Development Platform">
+<META http-equiv="Content-Style-Type" content="text/css">
+
+
+<LINK href="../css/renfe.css" rel="stylesheet" type="text/css">
+<SCRIPT type="text/javascript" src="../js/menu.js"></SCRIPT>
+<SCRIPT type="text/javascript" src="../js/ajax.js"></SCRIPT>
+<SCRIPT type="text/javascript" src="../js/validaciones.js"></SCRIPT>
+<SCRIPT type="text/javascript" src="../js/utilidad.js"></SCRIPT>
+<SCRIPT type="text/javascript" src="../js/calendario.js"></SCRIPT>
+<SCRIPT type="text/javascript" src="../js/calendarioSinHora.js"></SCRIPT>
+<SCRIPT type="text/javascript" src="../js/jquery/jquery-1.7.2.min.js"></SCRIPT>
+<SCRIPT type="text/javascript"
+	src="../js/jquery/jquery-ui-1.8.21.custom.min.js"></SCRIPT>
+<SCRIPT type="text/javascript" src="../js/jquery/jquery.dataTables.js"></SCRIPT>
+<SCRIPT type="text/javascript" src="../js/jquery/jquery.treeview.js"></SCRIPT>
+<SCRIPT type="text/javascript" src="../js/jquery/jquery.cookie.js"></SCRIPT>
+<SCRIPT type="text/javascript" src="../js/jquery/jquery.ui.draggable.js"></SCRIPT>
+<SCRIPT type="text/javascript" src="../js/jquery/jquery.ui.droppable.js"></SCRIPT>
+<SCRIPT type="text/javascript" src="../js/jquery/jquery.filestyle.js"></SCRIPT>
+<SCRIPT type="text/javascript" src="../js/jsp/ra_detalle_registro_fh.js"></SCRIPT>
+
+<!-- EVOL 75828 -->
+<script type='text/JavaScript'>
+	function desplegarContraer(cual,desde) { 
+	   var elElemento=document.getElementById(cual);
+	   if(elElemento.style.display == 'block') {
+	      elElemento.style.display = 'none';
+	      desde.className = 'linkContraido';
+	   } else {
+	      elElemento.style.display = 'block';
+	      desde.className = 'linkExpandido';
+	   }
+	}
+	function desplegarContraerCausas (cual,desde) { 
+	   var elElemento=document.getElementById(cual);
+	   if(elElemento.style.display == 'block') {
+	      elElemento.style.display = 'none';
+	      desde.className = 'linkContraidoCausas';
+	   } else {
+	      elElemento.style.display = 'block';
+	      desde.className = 'linkExpandidoCausas';
+	   }
+	}
+	
+	// @INC000000955412@INDRA.SCEXU9D.SDC@18/03/2015@INICIO
+	// 101145 RQ0001 Ajuste de la navegación
+	function volverDeRegistro() {
+		document.form_det_generales.volver.value = "S";
+		document.form_det_generales.submit();
+	}
+	// @INC000000955412@INDRA.SCEXU9D.SDC@18/03/2015@FIN
+</script>
+<!-- FIN EVOL 75828 -->
+
+</HEAD>
+<BODY>
+<script>
+	var pestanaSeleccionada = 0;
+</script>
+<DIV class="agpglobal">
+	<DIV class="agpcabecera">
+<DIV class="agpusuario" id="agpusuario">
+	
+	<SPAN>Eva Lopez Enriquez  (FH)</SPAN>
+	
+		| <A href="javascript:document.form_tipo_usuario.TIPO_USUARIO.value='FT';form_tipo_usuario.submit();">Cambiar a FT</A>
+		
+</DIV>
+<DIV class="agpsalir"><A href="../private/Logout" title="Cerrar Sesión">Salir</A></DIV>
+<DIV style="display:hidden">
+	<FORM method="post" action="Inicio" name="form_tipo_usuario">
+		<INPUT type="hidden" value="" name="TIPO_USUARIO">
+	</FORM>
+</DIV></DIV>
+	<DIV class="agpcuerpo">
+		<DIV class="agpmenu"><SCRIPT type="text/javascript">
+	function abrir(destino){
+	document.form_menu.seleccion.value=destino; 
+	form_menu.submit();
+	}
+</SCRIPT>
+
+
+<FORM method="post" action="Menu" name="form_menu">
+<INPUT type="hidden" name="seleccion" value="" >
+<DIV class="agptop">
+</DIV>
+<DIV id="agp_menu" class="agpmiddle">
+	
+	<DIV class="collapsed">
+        <SPAN>REGISTROS AGRYPA</SPAN>
+	    <A href="javascript:abrir('MENU_RA_EVENTOS');" title="Eventos">Eventos</A>       
+        <A href="javascript:abrir('MENU_RA_BUSQUEDAREGISTRO');" title="Consultar Registros">Consultar Registro</A> 
+	    <A href="javascript:abrir('MENU_RA_ALTAREGISTRO');" title="Alta Registro">Alta Registro</A>	    	    
+	</DIV>
+	
+	
+	<DIV class="collapsed">
+		<SPAN>NUEVO SERVICIO</SPAN>
+		<A href="javascript:abrir('MENU_NS_BUSQUEDANUEVOSERVICIO');" title="Consultar N. Servicio">Consultar N. Servi</A> 
+		<A href="javascript:abrir('MENU_NS_ALTANUEVOSERVICIO');" title="Alta N. Servicio">Alta N. Servicio</A> 
+	</DIV>
+	
+	
+	<DIV class="collapsed">
+        <SPAN>EXPEDIENTES</SPAN>
+	<A href="javascript:abrir('MENU_E_BUSQUEDAEXPEDIENTE');" title="Consultar Expedientes">Consultar Expedien</A>	  
+	</DIV>
+	
+	<DIV class="collapsed">
+        <SPAN>ACC. INVESTIGADORA</SPAN>
+	    <A href="javascript:abrir('MENU_AI_BUSQUEDAACCION');" title="Consultar Acciones">Consultar Acciones</A>		
+	</DIV>	
+	
+	<DIV class="collapsed">
+        <SPAN>MED. MITIGADORAS</SPAN>
+	    <A href="javascript:abrir('MENU_MM_BUSQUEDAMEDIDA');" title="Consultar Medidas">Consultar Medidas</A>		
+	</DIV>
+	
+	
+		<DIV class="collapsed">
+		        <SPAN>VALORACIONES</SPAN>	    
+			    <A href="javascript:abrir('MENU_HL_CATAL_ERRORES');" title="Catálogo Errores">Catálogo Errores</A>
+			    <A href="javascript:abrir('MENU_HL_CATAL_CAUSAS');" title="Catálogo Causas">Catálogo Causas</A>    	    	
+		</DIV>
+	
+	
+	<DIV class="collapsed">
+        <SPAN>INFORMES-INDICADOR</SPAN>
+	    <A href="javascript:abrir('MENU_II_CONSULTAINFORMES');" title="Informes">Informes</A>  
+	    <A href="javascript:abrir('MENU_II_CONSULTAINDICADORES');" title="Indicadores">Indicadores</A>  
+   	    <A href="javascript:abrir('MENU_II_GENERADORINFORMES');" title="Generador de informes">Generador de infor</A>  	
+	</DIV>	
+	
+	<DIV class="collapsed">
+        <SPAN>ADMINISTRACION</SPAN>
+    	<A href="javascript:abrir('MENU_AD_DATOSMAESTROS');" title="Datos Maestros">Datos Maestros</A> 
+	    <A href="javascript:abrir('MENU_AD_PARAMFILTRADO');" title="Param. Proceso Filtrado">Param. Proceso Fil</A> 
+	    <A href="javascript:abrir('MENU_AD_MATRIZ_RIESGO');" title="Matrices de Riesgo">Matrices de Riesgo</A> 	    
+	    <A href="javascript:abrir('MENU_AD_BUSQUEDAMEDIDAS');" title="Administrar Medidas">Administrar Medida</A> 	    			    
+	    <!-- @INC000000707662@INDRA.SCCIDB1.SDC@10/03/2014@INICIO --> 
+		<!-- 79723 RQ0001 INTERFACE ENTRE GIFO Y AGP -->
+	    
+	    	<A href="javascript:abrir('MENU_SOLICITUD_INFO_GIF');" title="Solicitud info GIFO">
+	    	Solicitud info GIF
+	    	</A>
+	    
+		<!-- @INC000000707662@INDRA.SCCIDB1.SDC@10/03/2014@FIN --> 
+	</DIV>	
+	
+	<DIV class="collapsed">
+        <SPAN>TAREAS</SPAN>
+        <A href="javascript:abrir('MENU_T_CONSULTATAREA');" title="Alertas Recibidas" >Alertas Recibidas</A> 
+	    <A href="javascript:abrir('MENU_T_CONSULTAALERTA');" title="Alertas Enviadas">Alertas Enviadas</A> 
+	</DIV>
+	
+	<DIV class="collapsed">
+	 <SPAN>DOCUMENTOS</SPAN>
+        <A href="javascript:abrir('MENU_DOC_BUSQUEDADOCUMENTOS');" title="Búsqueda de documentos" >Búsqueda de docume</A> 
+	</DIV>
+	
+</DIV>
+<DIV id="agp_menu" class="agpbottom"></DIV>
+</FORM></DIV>
+		<DIV class="agpcontenido">
+			<DIV class="agptop"></DIV>
+			<DIV class="agpmiddle">
+				<DIV class="agpcontenedor">  
+<!--------------------------------------------- Contenido Inicio (max-width: 800px) --------------------------------------------------->
+	
+	<div class="agpcv_registro"></div>
+	<div><br/>&nbsp;<br/></div>
+	
+<TABLE width="95%" cellspacing="0" cellpadding="0" style="table-layout:fixed; *width:100%">
+	<TR>
+		<TD height="17" class="agpsubtitulo"><SPAN>DETALLE
+		REGISTRO AGRYPA</SPAN></TD>
+	</TR>
+	<TR>
+		<TD align="center" valign="top">
+		<DIV id="tabs_detalle_fh">
+		<UL class="renfe_pestanas">
+			<LI><A href="#tabs_det_generales">Datos Generales</A></LI>
+			
+			<LI><A href="#tabs_evento_ACIA32138">Detalle
+			ACIA</A></LI>
+			
+			<LI><A href="#tabs_evento_COPERNICO819796">Detalle
+			COPERNICO</A></LI>
+			
+			<LI><A href="#tabs_det_intervinientes">Intervinientes</A></LI>
+			<LI><A href="#tabs_det_consultas">Consultas sistemas
+			externos</A></LI>
+			
+			
+			<LI><A href="#tabs_det_analisis">Análisis y Valoración</A></LI>
+			
+			
+			<LI><A href="#tabs_docs">Documentos adjuntos</A></LI>
+		</UL>
+		<DIV id="tabs_det_generales">
+		<!-- EVOL 79065 -->
+		<FORM method="post" action="EditarExpediente" name="form_consultar_expediente">
+			<INPUT type="hidden" name="ID_EXP" value=""/>
+			<!--@INC000000955412@INDRA.SCEXU9D.SDC@18/03/2015@INICIO
+				101145 RQ0001 Ajuste de la navegación -->
+			<INPUT type="hidden" name="navegaAccion" value=""/>
+			<INPUT type="hidden" name="navegaBusqExp" value=""/>
+			<INPUT type="hidden" name="navegaValoracion" value=""/>
+			<INPUT type="hidden" name="navegaExpReg" value="506245"/>
+			<INPUT type="hidden" name="expedienteConsulta" value=""/>
+			<INPUT type="hidden" name="expBusquedaReg" value=""/>
+			<INPUT type="hidden" name="navegaBusqMedida" value=""/>
+			<INPUT type="hidden" name="navegaMedida" value=""/>
+			<INPUT type="hidden" name="navegaBusqAccion" value=""/>
+			<INPUT type="hidden" name="volver" value=""/>
+			<!-- @INC000000955412@INDRA.SCEXU9D.SDC@18/03/2015@FIN -->
+		</FORM>
+		<!-- FIN EVOL 79065 -->
+		
+		<TABLE cellspacing="0" cellpadding="0" style="table-layout:fixed;">
+			<FORM method="post" action="GuardarRegistroFH"
+				name="form_det_generales">
+				<INPUT type="hidden"id="ID_REG_AGP" name="ID_REG_AGP"
+				value="506245" /> 
+				<INPUT type="hidden"id="CAMBIO_OFICINA" name="CAMBIO_OFICINA" value="false" /> 
+				<INPUT type="hidden" id="PROMOVER_REGISTRO" name="PROMOVER_REGISTRO"value="false" /> 
+				<INPUT type="hidden" id="DESESTIMAR_REGISTRO" name="DESESTIMAR_REGISTRO" value="false" /> 
+				<INPUT type="hidden" id="ELIMINAR_REGISTRO" name="ELIMINAR_REGISTRO" value="false" /> 
+				<INPUT type="hidden" id="GUARDAR_DAT_GEN" name="GUARDAR_DAT_GEN" value="false" />
+				<INPUT type="hidden" value="0" id="CONTADOR_SERVLET" name="CONTADOR_SERVLET"> 
+				<INPUT type="hidden" name="pestanaSeleccionada" value="">
+				<!--@INC000000955412@INDRA.SCEXU9D.SDC@18/03/2015@INICIO
+				101145 RQ0001 Ajuste de la navegación -->
+				<INPUT type="hidden" name="navegaAccion" value=""/>
+				<INPUT type="hidden" name="navegaBusqExp" value=""/>
+				<INPUT type="hidden" name="navegaValoracion" value=""/>
+				<INPUT type="hidden" name="navegaExpReg" value=""/>
+				<INPUT type="hidden" name="volver" id="volver" value=""/>
+				<INPUT type="hidden" name="expedienteConsulta" value=""/>
+				<INPUT type="hidden" name="expBusquedaReg" value=""/>
+				<INPUT type="hidden" name="navegaBusqMedida" value=""/>
+				<INPUT type="hidden" name="navegaMedida" value=""/>
+				<INPUT type="hidden" name="navegaBusqAccion" value=""/>
+				<!-- @INC000000955412@INDRA.SCEXU9D.SDC@18/03/2015@FIN -->
+ 			<TR>
+				<TD><br/></TD>
+			</TR>
+			<TR>
+				<TD class="agpcontenido" align="right">Cod. Registro</TD>
+				<TD align="left"><INPUT type="text" class="agptexto4"
+					value="FH/116261"
+					disabled /></TD>
+				<!-- EVOL 79065 -->
+				
+					<TD class="agpcontenido" align="right">Expedientes</TD>
+					<TD colspan="5" class="agpcontenido" align="left">
+						
+					</TD>
+				
+				<!-- FIN EVOL 79065 -->
+			</TR>
+			<TR>
+				<TD class="agpcontenido" align="right">Estado</TD>
+				<TD align="left"><INPUT type="text" class="agptexto4"
+					value="Registro"
+					disabled /></TD>
+				<TD class="agpcontenido" align="right">Fecha estado</TD>
+				<TD align="left"><INPUT type="text" class="agptexto4"
+					value="17/07/2019 08:49:35"
+					disabled /></TD>
+				<TD class="agpcontenido" align="right">Entrada manual</TD>
+				<TD align="left"><INPUT type="text" class="agptexto4"
+					value="N"
+					disabled /></TD>
+				<TD colspan="2"></TD>
+			</TR>
+			<TR>
+				<TD><br/></TD>
+			</TR>
+			<TR>
+				
+				<TD class="agpcontenido" align="right">Descripción sistema de origen</TD>
+				
+				<TD align="left" colspan="3"><TEXTAREA rows="10" cols="60"
+					id="DESCRIPCION" name="DESCRIPCION" class="agptexto1">ACIA: TREN 194 NO EFECTÚA LA PARADA COMERCIAL GRAFIADA EN LA ESTACIÓN DE LEGANÉS, SE INFORMA AL RESPONSABLE DE CIRCULACIÓN DE FUENLABRADA QUE ASEGURE LA PARADA EN VÍA 1 A LA ESPERAR DE LA LLEGADA DE LOS VIAJEROS EN TREN DE CERCANÍAS.
+COPERNICO: Maquinista manifiesta haberse pasado la parada de Leganes.</TEXTAREA>
+				</TD>
+				
+				<TD class="agpcontenido" align="right">Descripción secuencial suceso</TD>
+				
+				<TD align="left" colspan="3"><TEXTAREA rows="10" cols="60"
+					id="OBSERVACIONES" name="OBSERVACIONES" class="agptexto1">Tren Talgo de Larga Distancia procedente de Madrid-Chamartín y con destino Badajoz, no efectúa la parada comercial prescrita en la estación de Leganés.</TEXTAREA>
+				</TD>
+			</TR>
+			<TR>
+				<TD><br/></TD>
+			</TR>
+
+			<TR > 
+	
+				<TD class="agpcontenido" align="right">Núm. tren</TD>
+				
+				<TD align="left"><INPUT type="text" class="agptexto4"
+					id="NUM_TREN" name="NUM_TREN"
+					value="00194" />
+				</TD>
+				<TD class="agpcontenido" align="right">Núm. UIC</TD>
+				<TD align="left"><INPUT type="text" class="agptexto4"
+					value="957103340056"
+					disabled /></TD>
+				<TD class="agpcontenido" align="right">Núm. vehículo</TD>
+				<TD align="left"><INPUT type="text" class="agptexto4"
+					id="NUM_VEHICULO" name="NUM_VEHICULO"
+					value="334005" />
+				</TD>
+				<TD class="agpcontenido" align="right">Serie</TD>
+				<TD align="left"><INPUT type="text" class="agptexto4"
+					id="SERIE" name="SERIE"
+					value="334" />
+				</TD>
+			</TR>
+
+			<TR>
+			
+				<TD class="agpcontenido" align="right">Fecha inicio suceso</TD>
+			
+				<TD align="left"><INPUT type="text" class="agptexto4"
+					id="FCH_INI" name="FCH_INI"
+					value="11/07/2019 17:15:00" />
+				<DIV id="div_fecha_ini"></DIV>
+				</TD>
+				<TD class="agpcontenido" align="right">Fecha fin suceso</TD>
+				<TD align="left"><INPUT type="text" class="agptexto4"
+					id="FCH_FIN" name="FCH_FIN"
+					value="" />
+				<DIV id="div_fecha_fin"></DIV>
+				</TD>
+			</TR>
+
+			<TR >
+				<TD class="agpcontenido" align="right">Tipo Circulación</TD>
+				<TD><SELECT class="agpselect2" name="TREN_MANIOBRA">
+					<OPTION value=""></OPTION>
+					
+					<OPTION value="1"
+						selected="selected">Tren</OPTION>
+					
+					<OPTION value="2"
+						>Maniobra</OPTION>
+					
+				</SELECT></TD>
+				<TD class="agpcontenido" align="right">E. Operacional</TD>
+				<TD><SELECT class="agpselect2" name="ID_ENTORNO_OP">
+					<OPTION value=""></OPTION>
+					
+							<OPTION value="03"
+							>A. V.</OPTION>
+						
+					
+							<OPTION value="07"
+							>A. V. MD.</OPTION>
+						
+					
+							<OPTION value="04"
+							>Cercanías</OPTION>
+						
+					
+							<OPTION value="06"
+							>Integria</OPTION>
+						
+					
+							<OPTION value="01"
+							selected="selected">L. Distancia</OPTION>
+						
+					
+							<OPTION value="02"
+							>M. Distancia</OPTION>
+						
+					
+							<OPTION value="08"
+							>Maniobras</OPTION>
+						
+					
+							<OPTION value="05"
+							>Mercancías</OPTION>
+						
+					
+							<OPTION value="10"
+							>Mercancías (SAM)</OPTION>
+						
+					
+							<OPTION value="09"
+							>Viajeros (SAM)</OPTION>
+						
+					
+				</SELECT></TD>
+				<TD class="agpcontenido" align="right">Gerencia</TD>
+				<TD align="left"><INPUT type="text" class="agptexto4"
+					id="GERENCIA" name="GERENCIA"
+					value="CENTRO" />
+				</TD>
+			</TR>
+			<TR>
+				<TD><br/></TD>
+			</TR>
+			<TR >
+				<TD class="agpcontenido" align="right">Lugar</TD>
+				<TD align="left" colspan=3><SELECT class="agpselect9" id="LUGAR_TIPO"
+					name="LUGAR_TIPO">
+					<OPTION value=""></OPTION>
+					
+					<OPTION value="01" selected='true'>01
+					- Estación</OPTION>
+					
+					<OPTION value="02">02 - Apeadero/Apartadero</OPTION>
+					
+					<OPTION value="03">03 - Bifurcación</OPTION>
+					
+					<OPTION value="04">04 - Cambio de ancho</OPTION>
+					
+					<OPTION value="05">05 - Punto Kilométrico</OPTION>
+					
+					<OPTION value="06">06 - Apeadero/Cargadero</OPTION>
+					
+					<OPTION value="07">07 - Taller</OPTION>
+					
+					<OPTION value="08">08 - C.T.T.</OPTION>
+					
+					<OPTION value="09">09 - Derivación Particular</OPTION>
+					
+					</TR>
+					<TR >
+				</SELECT></TD>
+				<TD class="agpcontenido" align="right">Línea</TD>
+				<TD align="left" colspan="6"><div style="width: 480px; overflow: hidden;"><select id="LUGAR_LINEA"
+					name="LUGAR_LINEA" class="agpselect6" onMouseDown="this.className='agpselect6click';" onChange="this.className='agpselect6';" onBlur="this.className='agpselect6';" >
+					<option value=""></option>
+					
+					<option value="0001">0001
+					- Linha do Minho</option>
+					
+					<option value="0010">0010
+					- MADRID-PUERTA DE ATOCHA / SEVILLA-SANTA JUSTA</option>
+					
+					<option value="0012">0012
+					- MADRID-PUERTA DE ATOCHA / CAMBIADOR ATOCHA</option>
+					
+					<option value="0014">0014
+					- CORDOBA-CENTRAL / CAMBIADOR CORDOBA</option>
+					
+					<option value="14">14
+					- BIF. GOBNATES - BIF. BOBADILLA</option>
+					
+					<option value="0016">0016
+					- MAJARABIQUE / CAMBIADOR MAJARABIQUE</option>
+					
+					<option value="0018">0018
+					- BIF. CERRO NEGRO-STA. CAT / CTT CERRO NEGRO AV</option>
+					
+					<option value="0020">0020
+					- LA SAGRA / TOLEDO</option>
+					
+					<option value="0022">0022
+					- CAMBIADOR DE ALCOLEA / BIF. CAMBIADOR ALCOLEA</option>
+					
+					<option value="0024">0024
+					- YELES AGUJA KM 34,397 / BIF. BLANCALES</option>
+					
+					<option value="0030">0030
+					- BIF. MALAGA / A. V.  MARIA ZAMBRANO</option>
+					
+					<option value="0032">0032
+					- ANTEQUERA-SANTA ANA / CAMBIADOR ANTEQUERA</option>
+					
+					<option value="36">36
+					- ANTEQUERA SANTA ANA / GRANADA</option>
+					
+					<option value="0040">0040
+					- BIF. TORREJÓN DE VELASCO / VALENCIA JOAQUÍN SOROLLA</option>
+					
+					<option value="0042">0042
+					- BIF. ALBACETE / ALACANT-TERMINAL</option>
+					
+					<option value="0042">0042
+					- BIFURCACIÓN ALBACETE / ALICANTE TÉRMINO</option>
+					
+					<option value="0044">0044
+					- BIF. JOAQUIN SOROLLA UIC / BIF. JESUS</option>
+					
+					<option value="0050">0050
+					- MADRID PUERTA DE ATOCHA / LIMITE ADIF-TP FERRO</option>
+					
+					<option value="0052">0052
+					- CAMBIADOR PLASENCIA DE JALON / BIF. CAMBIADOR PLASENCIA DE JALON</option>
+					
+					<option value="0054">0054
+					- BIF. CANAL IMPERIAL / BIF. MONCASI</option>
+					
+					<option value="0056">0056
+					- BIF. ARTESA DE LLEIDA / BIF. LES TORRES DE SANUI</option>
+					
+					<option value="0058">0058
+					- CAMBIADOR LLEIDA / BIF. CAMBIADOR LLEIDA</option>
+					
+					<option value="0060">0060
+					- BIF. CAMBIADOR ZARAGOZA-DELICIAS / CAMBIADOR ZARAGOZA-DELICIAS</option>
+					
+					<option value="0062">0062
+					- PUIGVERD-CAMBIADOR DE ANCHO / BIF. CAMBIADOR PUIGVERD</option>
+					
+					<option value="0064">0064
+					- RODA DE BARA-CAMB. DE ANCHO / BIF. CAMBIADOR RODA</option>
+					
+					<option value="0068">0068
+					- VALLECAS AV AGUJA KM. 12.300 / LOS GAVILANES-AGUJA KM. 13.400</option>
+					
+					<option value="0070">0070
+					- BIF. HUESCA / HUESCA</option>
+					
+					<option value="0072">0072
+					- CTT FUENCARRAL AV / CAMBIADOR MADRID-CHAMARTIN</option>
+					
+					<option value="0074">0074
+					- CAMBIADOR DE MEDINA DEL CAMPO / OLMEDO-AV AG KM133,900</option>
+					
+					<option value="0076">0076
+					- CAMBIADOR VALDESTILLAS / BIF. CAMBIADOR VALDESTILLAS</option>
+					
+					<option value="0078">0078
+					- CAMBIADOR VALLADOLID C. GRANDE / VALLADOLID-CAMPO GRANDE</option>
+					
+					<option value="0080">0080
+					- BIF. VENTA DE BAÑOS / MADRID-CHAMARTIN</option>
+					
+					<option value="0082">0082
+					- BIF. A GRANDEIRA AG. KM. 85,0 A BIF, COTO DA TORRE</option>
+					
+					<option value="084">084
+					- LEON  /  BIF. VENTA DE BAÑOS</option>
+					
+					<option value="0100">0100
+					- HENDAYA / MADRID-CHAMARTIN</option>
+					
+					<option value="0102">0102
+					- BIF. ARANDA / MADRID-CHAMARTIN</option>
+					
+					<option value="0104">0104
+					- ALCOBENDAS-S. SEBASTIAN DE LOS REYE / UNIVERSIDAD-CANTOBLANCO</option>
+					
+					<option value="0106">0106
+					- HENDAYA / IRUN</option>
+					
+					<option value="0108">0108
+					- VALLADOLID-CAMPO GRANDE / LA CARRERA (CGD)</option>
+					
+					<option value="0110">0110
+					- SEGOVIA / VILLALBA DE GUADARRAMA</option>
+					
+					<option value="0112">0112
+					- BIF. LINEA MADRID-HENDAYA / VALLADOLID-ARGALES</option>
+					
+					<option value="114">114
+					- VALLADOLID FTE AMARGA KM 192.7 / BIF CANAL DEL DUERO</option>
+					
+					<option value="0116">0116
+					- LOS COTOS / CERCEDILLA</option>
+					
+					<option value="0120">0120
+					- VILAR FORMOSO / MEDINA DEL CAMPO</option>
+					
+					<option value="0122">0122
+					- SALAMANCA / AVILA</option>
+					
+					<option value="0124">0124
+					- SALAMANCA / VALDUNCIEL (CGD)</option>
+					
+					<option value="0126">0126
+					- ARANDA DE DUERO-MONTECILLO / ARANDA DE DUERO-CHELVA(CGD.)</option>
+					
+					<option value="0130">0130
+					- GIJON-SANZ CRESPO / VENTA DE BAÑOS</option>
+					
+					<option value="0132">0132
+					- BIF. TUDELA VEGUIN / ABLAÑA</option>
+					
+					<option value="0134">0134
+					- LEON CLASIFICACIÓN / TORNEROS</option>
+					
+					<option value="0138">0138
+					- BIF. GALICIA / BIF. BASE LEON</option>
+					
+					<option value="0140">0140
+					- BIF. TUDELA-VEGUIN / EL ENTREGO</option>
+					
+					<option value="0142">0142
+					- SOTO DE REY / BIF. OLLONIEGO</option>
+					
+					<option value="0144">0144
+					- SAN JUAN DE NIEVA / VILLABONA DE ASTURIAS</option>
+					
+					<option value="0146">0146
+					- BIF. VIELLA / BIF. PEÑA RUBIA</option>
+					
+					<option value="0148">0148
+					- TRASONA / NUBLEDO</option>
+					
+					<option value="0150">0150
+					- ABOÑO / SERIN</option>
+					
+					<option value="0152">0152
+					- GIJON-PUERTO / VERIÑA</option>
+					
+					<option value="0154">0154
+					- LUGO DE LLANERA / TUDELA-VEGUIN</option>
+					
+					<option value="158">158
+					- CAMBIADOR VILLAMURIEL / BIFURCACION CERRATO</option>
+					
+					<option value="0160">0160
+					- SANTANDER / PALENCIA</option>
+					
+					<option value="0162">0162
+					- SOLVAY FACTORIA (CGD) / SIERRAPANDO (APD)</option>
+					
+					<option value="0164">0164
+					- PALENCIA ARROYO VILLALOBÓN / MAGAZ</option>
+					
+					<option value="0166">0166
+					- BIF. RUBENA / VILLAFRÍA</option>
+					
+					<option value="0168">0168
+					- VILLAFRIA / BIF. RUBENA-AG KM 377,3</option>
+					
+					<option value="0172">0172
+					- CAMBIADOR MADRID-CHAMARTIN / MADRID-CHAMARTIN</option>
+					
+					<option value="0174">0174
+					- MEDINA DEL CAMPO / CAMBIADOR DE MEDINA DEL CAMPO</option>
+					
+					<option value="0176">0176
+					- VALDESTILLAS / CAMBIADOR VALDESTILLAS</option>
+					
+					<option value="0176">0176
+					- CAMBIADOR VALDESTILLAS / VALDESTILLAS</option>
+					
+					<option value="0178">0178
+					- VALLADOLID-AG. KM 250.2 / CAMBIADOR VALLADOLID C. GRANDE</option>
+					
+					<option value="180">180
+					- BIF. ESTADIO MUNICIPAL / CAMBIADOR CLASIFICACIÓN</option>
+					
+					<option value="186">186
+					- CAMBIADOR VILECHA / BIF. CAMBIADOR VILECHA</option>
+					
+					<option value="0188">0188
+					- BIF. ARROYO DE LA GOLOSA - CAMBIADOR MEDINA DEL CAMPO AV</option>
+					
+					<option value="0190">0190
+					- CAMBIADOR DE MEDINA DEL CAMPO AV - MEDINA DEL CAMPO AV</option>
+					
+					<option value="0200">0200
+					- MADRID-CHAMARTIN / BARCELONA-ESTACIÓ DE FRANÇA</option>
+					
+					<option value="0202">0202
+					- TORRALBA / CASTEJON DE EBRO</option>
+					
+					<option value="0204">0204
+					- BIF. CANFRANC / CANFRANC</option>
+					
+					<option value="0206">0206
+					- LLEIDA - PIRINEUS / LA POBLA DE SEGUR</option>
+					
+					<option value="0208">0208
+					- SAN JUAN DE MOZARRIFAR / SAN GREGORIO</option>
+					
+					<option value="0210">0210
+					- MIRAFLORES / TARRAGONA</option>
+					
+					<option value="0212">0212
+					- HOYA DE HUESCA-AGUJA KM. 2.3 / BIF. HOYA DE HUESCA</option>
+					
+					<option value="0214">0214
+					- C.I.M. DE ZARAGOZA / LA CARTUJA</option>
+					
+					<option value="0216">0216
+					- ZARAGOZA-ARRABAL / COGULLADA</option>
+					
+					<option value="0216">0216
+					- BIF. PLAZA AGUJA KM/1.4 / BIF. PLAZA AGUJA KM/8.7</option>
+					
+					<option value="0218">0218
+					- BIF. PLAZA / ZARAGOZA-PLAZA</option>
+					
+					<option value="0220">0220
+					- LLEIDA-PIRINEUS / LHOSPITALET DE LLOBREGAT</option>
+					
+					<option value="0222">0222
+					- LA TOUR DE CAROL-ENVEIGT / MONTCADA-BIFURCACIO</option>
+					
+					<option value="0224">0224
+					- CERDANYOLA UNIVERSITAT / CERDANYOLA DEL VALLES</option>
+					
+					<option value="0230">0230
+					- LA PLANA-PICAMOIXONS / REUS</option>
+					
+					<option value="0234">0234
+					- REUS / RODA DE BARA</option>
+					
+					<option value="0238">0238
+					- CASTELLBISBAL-AGUJAS LLOBREGAT / BARCELONA-MORROT</option>
+					
+					<option value="0240">0240
+					- SANT VICENT DE CALDERS / LHOSPITALET DE LLOBREGAT</option>
+					
+					<option value="0242">0242
+					- MARTORELL-SEAT / AGUJA KM. 71.185</option>
+					
+					<option value="0244">0244
+					- AGUJA KM. 70.477 / AGUJA KM. 0.500</option>
+					
+					<option value="0246">0246
+					- MOLLET-SANT FOST / CASTELLBISBAL-AGUJAS RUBI</option>
+					
+					<option value="0248">0248
+					- BIF. PAPIOL / AGUJA KM. 79.347</option>
+					
+					<option value="0250">0250
+					- BELLVITGE AGUJA KM.674.8  / LHOSPITALET DE LLOBREGAT</option>
+					
+					<option value="0254">0254
+					- AEROPORT / EL PRAT DE LLOBREGAT</option>
+					
+					<option value="0260">0260
+					- BARCELONA-SANTS / BARNA.-EST. DE FRANÇA</option>
+					
+					<option value="0262">0262
+					- BIF. SAGRERA / BIF. CLOT</option>
+					
+					<option value="0264">0264
+					- MONTCADA-BIFURCACIO / BIF. AIGÜES</option>
+					
+					<option value="0266">0266
+					- BIF. GLORIAS / BIF. VILANOVA</option>
+					
+					<option value="0268">0268
+					- BIF. ARAGO / BIF. SAGRERA</option>
+					
+					<option value="0270">0270
+					- CERBERE / BARNA.-S. ANDREU COMTAL</option>
+					
+					<option value="0272">0272
+					- GIRONA / BIF. GIRONA MERCADERIES</option>
+					
+					<option value="0274">0274
+					- CERBERE / PORTBOU</option>
+					
+					<option value="0276">0276
+					- MAÇANET-MASSANES / BIF.-SAGRERA</option>
+					
+					<option value="0278">0278
+					- BARNA.-S. ANDREU COMTAL / BIF. SANT ANDREU</option>
+					
+					<option value="0280">0280
+					- BIF. NUDO MOLLET / BIF. MOLLET</option>
+					
+					<option value="0282">0282
+					- CAMBIADOR PLASENCIA DE JALON / CAMBIADOR PLASENCIA-AG.KM.308.6</option>
+					
+					<option value="0284">0284
+					- CIM-AGUJA KM. 337.1 / CIM-AGUJA KM. 0.7</option>
+					
+					<option value="0286">0286
+					- LA CARTUJA-AGUJA KM. 23.3 / LA CARTUJA-AGUJA KM. 351.1</option>
+					
+					<option value="0288">0288
+					- MIRAFLORES-AGUJA KM. 345.6 / MIRAFLORES-AGUJA KM. 0.9</option>
+					
+					<option value="0290">0290
+					- CIM-AGUJA KM. 337.1 / CAMBIADOR ZARAGOZA-DELICIAS</option>
+					
+					<option value="0292">0292
+					- PUIGVERD-CAMBIADOR DE ANCHO / PUIGVERD DE LLEIDA-ARTESA</option>
+					
+					<option value="0294">0294
+					- RODA DE BARA-CAMB. DE ANCHO / RODA DE BARA</option>
+					
+					<option value="0300">0300
+					- MADRID-CHAMARTIN / VALENCIA-ESTACIO DEL NORD</option>
+					
+					<option value="0302">0302
+					- AGUJA CLASIF. KM. 146.1 / ALCAZAR DE SAN JUAN</option>
+					
+					<option value="0304">0304
+					- ALFAFAR-BENETUSSER / VFSL - AG. KM. 1,3</option>
+					
+					<option value="0308">0308
+					- ALBACETE LOS LLANOS A CAMBIADOR ALBACETE</option>
+					
+					<option value="0310">0310
+					- ARANJUEZ / VALENCIA FUENTE SAN LUIS</option>
+					
+					<option value="0312">0312
+					- CASTILLEJO-AÑOVER / ALGODOR</option>
+					
+					<option value="0314">0314
+					- QUART DE POBLET / VALENCIA SANT ISIDRE</option>
+					
+					<option value="0316">0316
+					- PINTO / SAN MARTIN DE LA VEGA</option>
+					
+					<option value="0318">0318
+					- CAMBIADOR DE ALBACETE A ALBACETE-AG KM 279,4</option>
+					
+					<option value="0320">0320
+					- CHINCHILLA DE MONTEARAGON AGUJA KM 298,4 / CARTAGENA</option>
+					
+					<option value="0322">0322
+					- AGUILAS / MURCIA CARGAS</option>
+					
+					<option value="0324">0324
+					- AGUJA KM. 0.8 / CARTAGENA</option>
+					
+					<option value="0326">0326
+					- AGUJA KM. 523.2 / ESCOMBRERAS</option>
+					
+					<option value="0328">0328
+					- VALENCIA JOAQUÍN SOROLLA AG. KM 396,7 A CAMBIADOR VALENCIA</option>
+					
+					<option value="0330">0330
+					- LA ENCINA / ALACANT-TERMINAL</option>
+					
+					<option value="0332">0332
+					- LA ENCINA AGUJA KM. 2.963/ CAUDETE</option>
+					
+					<option value="0334">0334
+					- SANT GABRIEL / ALACANT-BENALUA (CGD)</option>
+					
+					<option value="0336">0336
+					- EL REGUERON / ALACANT-TERMINAL</option>
+					
+					<option value="0338">0338
+					- CAMBIADOR VALENCIA A VALENCIA JOAQUÍN SOROLLA</option>
+					
+					<option value="0340">0340
+					- BIF. VALLADA / XATIVA-AGUJA KM.47.0</option>
+					
+					<option value="0342">0342
+					- ALCOI / XATIVA</option>
+					
+					<option value="0344">0344
+					- GANDIA / SILLA</option>
+					
+					<option value="0346">0346
+					- GANDIA PORT / GANDIA-MERCADERIES</option>
+					
+					<option value="0348">0348
+					- FORD / SILLA</option>
+					
+					<option value="0350">0350
+					- BIF. BENALUA A BIF. ALACANT</option>
+					
+					<option value="0360">0360
+					- RAM  LOS NIETOS / CARTAGENA</option>
+					
+					<option value="0400">0400
+					- ALCAZAR DE SAN JUAN / CADIZ</option>
+					
+					<option value="0402">0402
+					- ESPELUY-AGUJA KM. 340.1 / JAEN</option>
+					
+					<option value="0404">0404
+					- ESPELUY-AGUJA KM. 338.8  / ESPELUY-AGUJA KM. 150.5</option>
+					
+					<option value="0406">0406
+					- LAS ALETAS / UNIVERSIDAD DE CADIZ (APD)</option>
+					
+					<option value="0408">0408
+					- ALCOLEA-AGUJA KM 431,9 / CAMBIADOR DE ALCOLEA</option>
+					
+					<option value="0410">0410
+					- LINARES-BAEZA / ALMERIA</option>
+					
+					<option value="0412">0412
+					- MINAS DEL MARQUESADO / HUENEJA-DOLAR</option>
+					
+					<option value="0414">0414
+					- BIF. ALMERIA / BIF. GRANADA</option>
+					
+					<option value="0416">0416
+					- MOREDA / GRANADA</option>
+					
+					<option value="0418">0418
+					- ANTEQUERA-STA.ANA-AGJ.KM.50.4 / ANTEQUERA-STA.ANA-AGJ.KM.48.3</option>
+					
+					<option value="0420">0420
+					- BIF. LAS MARAVILLAS / ALGECIRAS</option>
+					
+					<option value="0422">0422
+					- BIF. UTRERA / FUENTE DE PIEDRA</option>
+					
+					<option value="0424">0424
+					- BIF. MALAGA / LA RODA DE ANDALUCIA</option>
+					
+					<option value="0426">0426
+					- GRANADA / FUENTE DE PIEDRA</option>
+					
+					<option value="0428">0428
+					- CAMBIADOR ANTEQUERA / ANTEQUERA-SANTA ANA-AGUJA KM. 50.</option>
+					
+					<option value="0430">0430
+					- BIF. CORDOBA - EL HIGUERON / LOS PRADOS</option>
+					
+					<option value="0432">0432
+					- CORDOBA-CENTRAL / EL HIGUERON</option>
+					
+					<option value="0434">0434
+					- CAMBIADOR CORDOBA / VALCHILLON</option>
+					
+					<option value="0436">0436
+					- FUENGIROLA / MALAGA-CENT. ALAMEDA (APD)</option>
+					
+					<option value="0440">0440
+					- BIF. LOS NARANJOS / HUELVA-TERMINO</option>
+					
+					<option value="0442">0442
+					- CAMBIADOR MAJARABIQUE / BIF. LOS NARANJOS</option>
+					
+					<option value="0444">0444
+					- BIF. TAMARGUILLO / LA SALUD</option>
+					
+					<option value="0446">0446
+					- BIF. CARTUJA / CARTUJA</option>
+					
+					<option value="0450">0450
+					- BIF. LA NEGRILLA / BIF. S. BERNARDO</option>
+					
+					<option value="0452">0452
+					- PUERTO DE SEVILLA (CGD) / LA SALUD</option>
+					
+					<option value="0454">0454
+					- CAMBIADOR MAJARABIQUE / BIF. SAN JERONIMO</option>
+					
+					<option value="0456">0456
+					- LA SALUD-AGUJA KM. 6.2 / LA SALUD-AGUJA KM. 10.2</option>
+					
+					<option value="0458">0458
+					- MAJARABIQUE-ESTACION / BIF. SAN JERONIMO</option>
+					
+					<option value="460">460
+					- BIF. RIOFRIO / FUENTE DE PIEDRA</option>
+					
+					<option value="464">464
+					- BIF. TOCON / BIF. LA CHANA</option>
+					
+					<option value="0500" selected="true">0500
+					- BIF. PLANETARIO / VALENCIA DE ALCANTARA</option>
+					
+					<option value="0502">0502
+					- VALENCIA DE ALCANTARA / KM. 428.5 (FRONTERA)</option>
+					
+					<option value="0504">0504
+					- VILLALUENGA-YUNCLER / ALGODOR</option>
+					
+					<option value="0510">0510
+					- ALJUCEN / CACERES</option>
+					
+					<option value="0512">0512
+					- ZAFRA / HUELVA-CARGAS</option>
+					
+					<option value="0514">0514
+					- ZAFRA / JEREZ DE LOS CABALLEROS (CGD)</option>
+					
+					<option value="0516">0516
+					- MERIDA / LOS ROSALES</option>
+					
+					<option value="0520">0520
+					- CIUDAD REAL / BADAJOZ</option>
+					
+					<option value="0522">0522
+					- MANZANARES / CIUDAD REAL</option>
+					
+					<option value="0524">0524
+					- CIUDAD REAL / MIGUELTURRA  BIF. POBLETE</option>
+					
+					<option value="0526">0526
+					- PUERTOLLANO / PUERTOLLANO-REFINERIA</option>
+					
+					<option value="0528">0528
+					- ALMORCHON / MIRABUENO</option>
+					
+					<option value="0530">0530
+					- MONFRAGÜE / PLASENCIA</option>
+					
+					<option value="0532">0532
+					- MONFRAGE-AGUJA KM. 255.4 / MONFRAGE-AGUJA KM. 4.4</option>
+					
+					<option value="0600">0600
+					- VALENCIA-ESTACIO DEL NORD / SANT VICENTE DE CALDERS</option>
+					
+					<option value="0602">0602
+					- VFSL - AG. KM. 2,3 / VALENCIA PUERTO NORTE</option>
+					
+					<option value="0604">0604
+					- LES PALMES / CASTELLO-PORT</option>
+					
+					<option value="0606">0606
+					- VALENCIA FUENTE SAN LUIS-AG. KM. 1,3 / VALENCIA PUERTO SUR</option>
+					
+					<option value="0608">0608
+					- CLASIFICACIÓN VALENCIA FUENTE SAN LUIS / VALENCIA FUENTE SAN LUIS AG. KM. 1,6</option>
+					
+					<option value="0610">0610
+					- SAGUNT / BIF. TERUEL</option>
+					
+					<option value="0612">0612
+					- SAGUNT-AGUJA KM. 28.3. / SAGUNT-AGUJA KM. 268.8.</option>
+					
+					<option value="0614">0614
+					- VALENCIA-AGUJA ESTACIÓN JOAQUÍN SOROLLA A VALENCIA JOAQUÍN SOROLLA</option>
+					
+					<option value="614">614
+					- VALENCIA AGUJA ESTACION AV - VALENCIA JOAQUIN SOROLLA</option>
+					
+					<option value="0620">0620
+					- TORTOSA / LALDEA-AMPOSTA-TORTOSA</option>
+					
+					<option value="0622">0622
+					- AGUJA CLASIF. KM. 272.0. / TARRAGONA-CLASSIFICACIO</option>
+					
+					<option value="0624">0624
+					- AGUJA CLASIF. KM. 100.4. /  TARRAGONA</option>
+					
+					<option value="0700">0700
+					- INTERMODAL ABANDO IND. PRIETO / CASETAS</option>
+					
+					<option value="0702">0702
+					- CABAÑAS DE EBRO / GRISEN</option>
+					
+					<option value="0704">0704
+					- BIF. RIOJA / BIF. CASTILLA</option>
+					
+					<option value="0710">0710
+					- ALTSASU / CASTEJON DE EBRO</option>
+					
+					<option value="0712">0712
+					- BIF. KM.534.0 / BIF. KM.231.5</option>
+					
+					<option value="0720">0720
+					- SANTURTZI / INTERMODAL ABANDO IND. PRIETO</option>
+					
+					<option value="0722">0722
+					- MUSKIZ / DESERTU-BARAKALDO</option>
+					
+					<option value="0724">0724
+					- BILBAO MERCANCIAS / SANTURTZI</option>
+					
+					<option value="0726">0726
+					- BIF. LA CASILLA / AGUJA DE ENLACE</option>
+					
+					<option value="0740">0740
+					- RAM PRAVIA / FERROL</option>
+					
+					<option value="0750">0750
+					- RAM  GIJON SANZ CRESPO / PRAVIA</option>
+					
+					<option value="0752">0752
+					- RAM  LAVIANA / GIJON SANZ CRESPO</option>
+					
+					<option value="0754">0754
+					- RAM  SOTIELLO / PUERTO EL MUSEL</option>
+					
+					<option value="0756">0756
+					- RAM  SOTIELLO / ABOÑO APD</option>
+					
+					<option value="0758">0758
+					- RAM  LA MARUCA MERCANCÍAS / PUERTO AVILES</option>
+					
+					<option value="0760">0760
+					- RAM  OVIEDO / TRUBIA</option>
+					
+					<option value="0762">0762
+					- RAM  TRUBIA / SAN ESTEBAN DE PRAVIA</option>
+					
+					<option value="0764">0764
+					- RAM TRUBIA / COLLANZO</option>
+					
+					<option value="0770">0770
+					- RAM  VALDECILLA LA MARGA / OVIEDO</option>
+					
+					<option value="0778">0778
+					- RAM  RIBADESELLA PUERTO / LLOVIO</option>
+					
+					<option value="0780">0780
+					- RAM  BILBAO CONCORDIA / SANTANDER</option>
+					
+					<option value="0782">0782
+					- RAM  ARIZ / BASURTO HOSPITAL</option>
+					
+					<option value="0784">0784
+					- RAM  LUTXANA-BARAKALDO / IRAUREGUI</option>
+					
+					<option value="0786">0786
+					- RAM  LIERGANES / OREJO</option>
+					
+					<option value="0788">0788
+					- RAM  PUERTO DE RAOS / MALIAÑO</option>
+					
+					<option value="0790">0790
+					- RAM  ARANGUREN / ASUNCION UNIVERSIDAD</option>
+					
+					<option value="0792">0792
+					- RAM  MATALLANA / LA ROBLA</option>
+					
+					<option value="0794">0794
+					- RAM  GUARDO / TERMICA VELILLA</option>
+					
+					<option value="0800">0800
+					- A CORUÑA / LEON</option>
+					
+					<option value="0802">0802
+					- TORAL DE LOS VADOS / VILLAFRANCA DEL BIERZO (CGD)</option>
+					
+					<option value="0804">0804
+					- BETANZOS-INFESTA / FERROL</option>
+					
+					<option value="0806">0806
+					- LA BAÑEZA / ASTORGA</option>
+					
+					<option value="0810">0810
+					- VIGO / MONFORTE DE LEMOS</option>
+					
+					<option value="0812">0812
+					- VIGO-GUIXAR / CHAPELA-AGUJA KM. 171.0</option>
+					
+					<option value="0814">0814
+					- GUILLAREI  / VALENCA DO MINHO</option>
+					
+					<option value="0816">0816
+					- GUILLAREI-AG. KM. 141.6 / GUILLAREI-AG. KM. 0.9</option>
+					
+					<option value="818">818
+					- VILAGARCIA DE AROUSA - BIF. ANGUEIRA</option>
+					
+					<option value="0820">0820
+					- ZAMORA / MEDINA DEL CAMPO</option>
+					
+					<option value="0822">0822
+					- ZAMORA / A CORUÑA</option>
+					
+					<option value="0824">0824
+					- REDONDELA / SANTIAGO DE COMPOSTELA</option>
+					
+					<option value="0826">0826
+					- CENTRAL TERMICA DE MEIRAMA / BIF. CERCEDA</option>
+					
+					<option value="0828">0828
+					- FAXIL / PORTAS</option>
+					
+					<option value="0830">0830
+					- BIF. UXES / BIF. SAN CRISTOBAL</option>
+					
+					<option value="0832">0832
+					- AGUJA KM. 545.4 / BIF. SAN DIEGO</option>
+					
+					<option value="0834">0834
+					- A CORUÑA SAN DIEGO / BIF. EL BURGO</option>
+					
+					<option value="0836">0836
+					- BIF. LEON / BIF. RIO BERNESGA</option>
+					
+					<option value="0838">0838
+					- BIF. TORNEROS / BIF. QUINTANA</option>
+					
+					<option value="0840">0840
+					- CERCEDA-MEIRAMA AGJ. KM 0,729 A MEIRAMA-PICARDEL</option>
+					
+					<option value="0842">0842
+					- BIF. RIO SAR A BIF. A GRANDEIRA AG. KM 376,1</option>
+					
+					<option value="848">848
+					- REDONDELA AV - BIF. REDONDELA</option>
+					
+					<option value="850">850
+					- VIGO URZAIZ - BIF. ARCADE</option>
+					
+					<option value="0884">0884
+					- BIF. DEL BOLON - CAMBIADOR DE ZAMORA</option>
+					
+					<option value="0886">0886
+					- CAMBIADOR DE ZAMORA - ZAMORA</option>
+					
+					<option value="0900">0900
+					- MADRID-CHAMARTIN / MADRID-ATOCHA CERCANIAS</option>
+					
+					<option value="0902">0902
+					- PITIS / BIF. HORTALEZA</option>
+					
+					<option value="0904">0904
+					- BIF. FUENCARRAL / FUENCARRAL-AGUJA KM 4.5.</option>
+					
+					<option value="0906">0906
+					- FUENCARRAL-COMPLEJO  / MADRID-CHAMARTIN</option>
+					
+					<option value="0908">0908
+					- HORTALEZA / AEROPUERTO T-4</option>
+					
+					<option value="0910">0910
+					- MADRID-ATOCHA CERCANIAS / PINAR DE LAS ROZAS</option>
+					
+					<option value="0912">0912
+					- LAS MATAS / PINAR DE LAS ROZAS</option>
+					
+					<option value="0914">0914
+					- BIF. CHAMARTIN / BIF. P. PIO</option>
+					
+					<option value="0916">0916
+					- DELICIAS / MADRID-SANTA CATALINA</option>
+					
+					<option value="0920">0920
+					- MOSTOLES - EL SOTO / PARLA</option>
+					
+					<option value="0922">0922
+					- BIF. PARLA / PARLA INDUSTRIAL</option>
+					
+					<option value="0930">0930
+					- MADRID-ATOCHA CERCANIAS / SAN FERNANDO DE HENARES</option>
+					
+					<option value="0932">0932
+					- MADRID-ATOCHA CERCANIAS / MADRID-SANTA CATALINA</option>
+					
+					<option value="0934">0934
+					- MADRID-ABROÑIGAL / BIF. REBOLLEDO</option>
+					
+					<option value="0936">0936
+					- SAN CRISTOBAL INDUSTRIAL / VILLAVERDE BAJO</option>
+					
+					<option value="0938">0938
+					- MADRID-ATOCHA CERCANIAS / ASAMBLEA MADRID-ENTREVIAS (APD)</option>
+					
+					<option value="0940">0940
+					- ODONNELL / VICALVARO-CLASIFICACION</option>
+					
+					<option value="0942">0942
+					- VILLAVERDE BAJO / VALLECAS-INDUSTRIAL</option>
+					
+					<option value="0944">0944
+					- VICALVARO / BIF. VICALVARO-CLASIFICACION</option>
+					
+					<option value="0946">0946
+					- MADRID-SANTA CATALINA / VILLAVERDE BAJO</option>
+					
+					<option value="0948">0948
+					- VICALVARO-CLASIFICACION / BIF. VICALVARO-CLASIFICACION</option>
+					
+					<option value="0950">0950
+					- MADRID-ATOCHA CERCANIAS / AGUJA KM. 1.4</option>
+					
+					<option value="0952">0952
+					- MADRID-ATOCHA CERCANIAS / AGUJA KM. 1.8</option>
+					
+					<option value="0982">0982
+					- ZAMORA - BIF. MEDINA</option>
+					
+				</select></div></TD>
+				</TR>
+				<TR >
+				<TD class="agpcontenido" align="right">Estación</TD>
+				<TD align="left" colspan="3"><div style="width: 300px; overflow: hidden;">
+				<DIV id='estacion'><SELECT id="LUGAR_EST"
+					name="LUGAR_EST" class="agpselect9" onMouseDown="this.className='agpselect5click';" onChange="this.className='agpselect5';" onBlur="this.className='agpselect5';" >
+					<OPTION value=""></OPTION>
+					
+					<OPTION value="A6001">A6001
+					- AG. KM. 1,4                                                                     </OPTION>
+					
+					<OPTION value="A6002">A6002
+					- AG. KM. 1,8                                                                     </OPTION>
+					
+					<OPTION value="35402">35402
+					- ARROYO DE MALPARTIDA                                                            </OPTION>
+					
+					<OPTION value="35102">35102
+					- BARGAS                                                                          </OPTION>
+					
+					<OPTION value="B3531">B3531
+					- BIF. MIRABEL                                                                    </OPTION>
+					
+					<OPTION value="B6002">B6002
+					- BIF. PLANETARIO                                                                 </OPTION>
+					
+					<OPTION value="35400">35400
+					- CACERES                                                                         </OPTION>
+					
+					<OPTION value="35201">35201
+					- CALERA-CHOZAS                                                                   </OPTION>
+					
+					<OPTION value="35305">35305
+					- CASAR DE CACERES                                                                </OPTION>
+					
+					<OPTION value="35302">35302
+					- CASAS DE MILLAN                                                                 </OPTION>
+					
+					<OPTION value="35207">35207
+					- CASATEJADA                                                                      </OPTION>
+					
+					<OPTION value="35303">35303
+					- CAÑAVERAL                                                                       </OPTION>
+					
+					<OPTION value="35107">35107
+					- ERUSTES                                                                         </OPTION>
+					
+					<OPTION value="35002">35002
+					- FUENLABRADA                                                                     </OPTION>
+					
+					<OPTION value="35004">35004
+					- GRIÑON                                                                          </OPTION>
+					
+					<OPTION value="35012">35012
+					- HUMANES                                                                         </OPTION>
+					
+					<OPTION value="A3500">A3500
+					- HUMANES-AGUJA KM. 25.3                                                          </OPTION>
+					
+					<OPTION value="35005">35005
+					- ILLESCAS                                                                        </OPTION>
+					
+					<OPTION value="35108">35108
+					- KM. 110.4                                                                       </OPTION>
+					
+					<OPTION value="35209">35209
+					- LA BAZAGONA                                                                     </OPTION>
+					
+					<OPTION value="35010">35010
+					- LA SERNA-FUENLABRADA                                                            </OPTION>
+					
+					<OPTION value="35001" selected='true'>
+					35001 - LEGANES                                                                         </OPTION>
+					
+					<OPTION value="18000">18000
+					- MADRID-ATOCHA CERCANIAS                                                         </OPTION>
+					
+					<OPTION value="60000">60000
+					- MADRID-PUERTA DE ATOCHA                                                         </OPTION>
+					
+					<OPTION value="60001">60001
+					- MADRID-SANTA CATALINA                                                           </OPTION>
+					
+					<OPTION value="35301">35301
+					- MIRABEL                                                                         </OPTION>
+					
+					<OPTION value="30000">30000
+					- MONFRAGÜE                                                                       </OPTION>
+					
+					<OPTION value="35109">35109
+					- MONTEARAGON                                                                     </OPTION>
+					
+					<OPTION value="35206">35206
+					- NAVALMORAL DE LA MATA                                                           </OPTION>
+					
+					<OPTION value="35203">35203
+					- OROPESA DE TOLEDO                                                               </OPTION>
+					
+					<OPTION value="35011">35011
+					- PARQUE POLVORANCA                                                               </OPTION>
+					
+					<OPTION value="35304">35304
+					- RIO TAJO                                                                        </OPTION>
+					
+					<OPTION value="35405">35405
+					- SAN VICENTE DE ALCANTARA                                                        </OPTION>
+					
+					<OPTION value="35200">35200
+					- TALAVERA DE LA REINA                                                            </OPTION>
+					
+					<OPTION value="35105">35105
+					- TORRIJOS                                                                        </OPTION>
+					
+					<OPTION value="35406">35406
+					- VALENCIA DE ALCANTARA                                                           </OPTION>
+					
+					<OPTION value="35100">35100
+					- VILLALUENGA-YUNCLER                                                             </OPTION>
+					
+					<OPTION value="35103">35103
+					- VILLAMIEL DE TOLEDO                                                             </OPTION>
+					
+					<OPTION value="37406">37406
+					- VILLANUEVA DE LA SERENA                                                         </OPTION>
+					
+					<OPTION value="37001">37001
+					- VILLAVERDE ALTO                                                                 </OPTION>
+					
+					<OPTION value="60100">60100
+					- VILLAVERDE BAJO                                                                 </OPTION>
+					
+					<OPTION value="35009">35009
+					- ZARZAQUEMADA                                                                    </OPTION>
+					
+				</SELECT></DIV></div>
+				</TD>
+				<TD class="agpcontenido" align="right">PK</TD>
+				<TD align="left"><INPUT type="text" class="agptexto4"
+					id="LUGAR_PK" name="LUGAR_PK"
+					value="0" />
+				</TD>
+			</TR>
+			
+			<TR >
+				<TD class="agpcontenido" align="right">Entre</TD>
+				<TD align="left" colspan="3"><div style="width: 300px; overflow: hidden;">
+				<DIV id='entre'><SELECT id="LUGAR_EST_INI"
+					name="LUGAR_EST_INI" class="agpselect9" onMouseDown="this.className='agpselect5click';" onChange="this.className='agpselect5';" onBlur="this.className='agpselect5';" >
+					<OPTION value=""></OPTION>
+					
+					<OPTION value="A6001">A6001
+					- AG. KM. 1,4                                                                     </OPTION>
+					
+					<OPTION value="A6002">A6002
+					- AG. KM. 1,8                                                                     </OPTION>
+					
+					<OPTION value="35402">35402
+					- ARROYO DE MALPARTIDA                                                            </OPTION>
+					
+					<OPTION value="35102">35102
+					- BARGAS                                                                          </OPTION>
+					
+					<OPTION value="B3531">B3531
+					- BIF. MIRABEL                                                                    </OPTION>
+					
+					<OPTION value="B6002">B6002
+					- BIF. PLANETARIO                                                                 </OPTION>
+					
+					<OPTION value="35400">35400
+					- CACERES                                                                         </OPTION>
+					
+					<OPTION value="35201">35201
+					- CALERA-CHOZAS                                                                   </OPTION>
+					
+					<OPTION value="35305">35305
+					- CASAR DE CACERES                                                                </OPTION>
+					
+					<OPTION value="35302">35302
+					- CASAS DE MILLAN                                                                 </OPTION>
+					
+					<OPTION value="35207">35207
+					- CASATEJADA                                                                      </OPTION>
+					
+					<OPTION value="35303">35303
+					- CAÑAVERAL                                                                       </OPTION>
+					
+					<OPTION value="35107">35107
+					- ERUSTES                                                                         </OPTION>
+					
+					<OPTION value="35002">35002
+					- FUENLABRADA                                                                     </OPTION>
+					
+					<OPTION value="35004">35004
+					- GRIÑON                                                                          </OPTION>
+					
+					<OPTION value="35012">35012
+					- HUMANES                                                                         </OPTION>
+					
+					<OPTION value="A3500">A3500
+					- HUMANES-AGUJA KM. 25.3                                                          </OPTION>
+					
+					<OPTION value="35005">35005
+					- ILLESCAS                                                                        </OPTION>
+					
+					<OPTION value="35108">35108
+					- KM. 110.4                                                                       </OPTION>
+					
+					<OPTION value="35209">35209
+					- LA BAZAGONA                                                                     </OPTION>
+					
+					<OPTION value="35010">35010
+					- LA SERNA-FUENLABRADA                                                            </OPTION>
+					
+					<OPTION value="35001">35001
+					- LEGANES                                                                         </OPTION>
+					
+					<OPTION value="18000">18000
+					- MADRID-ATOCHA CERCANIAS                                                         </OPTION>
+					
+					<OPTION value="60000">60000
+					- MADRID-PUERTA DE ATOCHA                                                         </OPTION>
+					
+					<OPTION value="60001">60001
+					- MADRID-SANTA CATALINA                                                           </OPTION>
+					
+					<OPTION value="35301">35301
+					- MIRABEL                                                                         </OPTION>
+					
+					<OPTION value="30000">30000
+					- MONFRAGÜE                                                                       </OPTION>
+					
+					<OPTION value="35109">35109
+					- MONTEARAGON                                                                     </OPTION>
+					
+					<OPTION value="35206">35206
+					- NAVALMORAL DE LA MATA                                                           </OPTION>
+					
+					<OPTION value="35203">35203
+					- OROPESA DE TOLEDO                                                               </OPTION>
+					
+					<OPTION value="35011">35011
+					- PARQUE POLVORANCA                                                               </OPTION>
+					
+					<OPTION value="35304">35304
+					- RIO TAJO                                                                        </OPTION>
+					
+					<OPTION value="35405">35405
+					- SAN VICENTE DE ALCANTARA                                                        </OPTION>
+					
+					<OPTION value="35200">35200
+					- TALAVERA DE LA REINA                                                            </OPTION>
+					
+					<OPTION value="35105">35105
+					- TORRIJOS                                                                        </OPTION>
+					
+					<OPTION value="35406">35406
+					- VALENCIA DE ALCANTARA                                                           </OPTION>
+					
+					<OPTION value="35100">35100
+					- VILLALUENGA-YUNCLER                                                             </OPTION>
+					
+					<OPTION value="35103">35103
+					- VILLAMIEL DE TOLEDO                                                             </OPTION>
+					
+					<OPTION value="37406">37406
+					- VILLANUEVA DE LA SERENA                                                         </OPTION>
+					
+					<OPTION value="37001">37001
+					- VILLAVERDE ALTO                                                                 </OPTION>
+					
+					<OPTION value="60100">60100
+					- VILLAVERDE BAJO                                                                 </OPTION>
+					
+					<OPTION value="35009">35009
+					- ZARZAQUEMADA                                                                    </OPTION>
+					
+				</SELECT></DIV></div>
+				</TD>
+				<TD class="agpcontenido" align="right">Y</TD>
+				<TD align="left" colspan="3"><div style="width: 300px; overflow: hidden;">
+				<DIV id='y'><SELECT id="LUGAR_EST_FIN"
+					name="LUGAR_EST_FIN" class="agpselect9" onMouseDown="this.className='agpselect5click';" onChange="this.className='agpselect5';" onBlur="this.className='agpselect5';" >
+					<OPTION value=""></OPTION>
+					
+					<OPTION value="A6001">A6001
+					- AG. KM. 1,4                                                                     </OPTION>
+					
+					<OPTION value="A6002">A6002
+					- AG. KM. 1,8                                                                     </OPTION>
+					
+					<OPTION value="35402">35402
+					- ARROYO DE MALPARTIDA                                                            </OPTION>
+					
+					<OPTION value="35102">35102
+					- BARGAS                                                                          </OPTION>
+					
+					<OPTION value="B3531">B3531
+					- BIF. MIRABEL                                                                    </OPTION>
+					
+					<OPTION value="B6002">B6002
+					- BIF. PLANETARIO                                                                 </OPTION>
+					
+					<OPTION value="35400">35400
+					- CACERES                                                                         </OPTION>
+					
+					<OPTION value="35201">35201
+					- CALERA-CHOZAS                                                                   </OPTION>
+					
+					<OPTION value="35305">35305
+					- CASAR DE CACERES                                                                </OPTION>
+					
+					<OPTION value="35302">35302
+					- CASAS DE MILLAN                                                                 </OPTION>
+					
+					<OPTION value="35207">35207
+					- CASATEJADA                                                                      </OPTION>
+					
+					<OPTION value="35303">35303
+					- CAÑAVERAL                                                                       </OPTION>
+					
+					<OPTION value="35107">35107
+					- ERUSTES                                                                         </OPTION>
+					
+					<OPTION value="35002">35002
+					- FUENLABRADA                                                                     </OPTION>
+					
+					<OPTION value="35004">35004
+					- GRIÑON                                                                          </OPTION>
+					
+					<OPTION value="35012">35012
+					- HUMANES                                                                         </OPTION>
+					
+					<OPTION value="A3500">A3500
+					- HUMANES-AGUJA KM. 25.3                                                          </OPTION>
+					
+					<OPTION value="35005">35005
+					- ILLESCAS                                                                        </OPTION>
+					
+					<OPTION value="35108">35108
+					- KM. 110.4                                                                       </OPTION>
+					
+					<OPTION value="35209">35209
+					- LA BAZAGONA                                                                     </OPTION>
+					
+					<OPTION value="35010">35010
+					- LA SERNA-FUENLABRADA                                                            </OPTION>
+					
+					<OPTION value="35001">35001
+					- LEGANES                                                                         </OPTION>
+					
+					<OPTION value="18000">18000
+					- MADRID-ATOCHA CERCANIAS                                                         </OPTION>
+					
+					<OPTION value="60000">60000
+					- MADRID-PUERTA DE ATOCHA                                                         </OPTION>
+					
+					<OPTION value="60001">60001
+					- MADRID-SANTA CATALINA                                                           </OPTION>
+					
+					<OPTION value="35301">35301
+					- MIRABEL                                                                         </OPTION>
+					
+					<OPTION value="30000">30000
+					- MONFRAGÜE                                                                       </OPTION>
+					
+					<OPTION value="35109">35109
+					- MONTEARAGON                                                                     </OPTION>
+					
+					<OPTION value="35206">35206
+					- NAVALMORAL DE LA MATA                                                           </OPTION>
+					
+					<OPTION value="35203">35203
+					- OROPESA DE TOLEDO                                                               </OPTION>
+					
+					<OPTION value="35011">35011
+					- PARQUE POLVORANCA                                                               </OPTION>
+					
+					<OPTION value="35304">35304
+					- RIO TAJO                                                                        </OPTION>
+					
+					<OPTION value="35405">35405
+					- SAN VICENTE DE ALCANTARA                                                        </OPTION>
+					
+					<OPTION value="35200">35200
+					- TALAVERA DE LA REINA                                                            </OPTION>
+					
+					<OPTION value="35105">35105
+					- TORRIJOS                                                                        </OPTION>
+					
+					<OPTION value="35406">35406
+					- VALENCIA DE ALCANTARA                                                           </OPTION>
+					
+					<OPTION value="35100">35100
+					- VILLALUENGA-YUNCLER                                                             </OPTION>
+					
+					<OPTION value="35103">35103
+					- VILLAMIEL DE TOLEDO                                                             </OPTION>
+					
+					<OPTION value="37406">37406
+					- VILLANUEVA DE LA SERENA                                                         </OPTION>
+					
+					<OPTION value="37001">37001
+					- VILLAVERDE ALTO                                                                 </OPTION>
+					
+					<OPTION value="60100">60100
+					- VILLAVERDE BAJO                                                                 </OPTION>
+					
+					<OPTION value="35009">35009
+					- ZARZAQUEMADA                                                                    </OPTION>
+					
+				</SELECT></DIV></div>
+				</TD>
+			</TR>
+			<TR >
+				<TD class="agpcontenido" align="right">Otro lugar</TD>
+				<TD align="left" colspan="3"><input type="text" class="agptexto1"
+					id="LUGAR_OTRO" name="LUGAR_OTRO"
+					value='LEGANÉS' style="width:267px"></TD>
+			</TR>
+
+			<TR>
+				<TD><br/><br/><br/></TD>
+			</TR>
+			<TR>
+				<TD colspan="8">
+				<DIV style="float: right;"><INPUT type="button" class="agppdf" title="Generar PDF" onFocus="this.blur();" onclick="generarPdf();" /></DIV>
+				
+				<INPUT type="button" value="Guardar" class="agpsubmit" onFocus="this.blur();" onclick="guardarDatosGeneralesRegistro()" /> 
+				 
+				<INPUT type="button" value="Desestimar" class="agpsubmit" onFocus="this.blur();" onclick="desestimarRegistro()" />
+				 
+				<INPUT	type="button" value="Cambiar a registro de Fallo Técnico"	class="agpsubmit" onFocus="this.blur();" onclick="cambiarOficinaRegistro()" /> 
+				<INPUT type="button"value="Eliminar" class="agpsubmit" onFocus="this.blur();"onclick="eliminarRegistro()" />
+					
+				
+					
+						<!--@INC000000955412@INDRA.SCEXU9D.SDC@18/03/2015@INICIO
+							101145 RQ0001 Ajuste de la navegación -->
+						<!-- <INPUT type="button" value="Volver" class="agpsubmit" onFocus="this.blur();" onclick="volver()"/>  -->
+						<INPUT type="button" value="Volver" class="agpsubmit" onclick="volverDeRegistro()"/>
+						<!-- @INC000000955412@INDRA.SCEXU9D.SDC@18/03/2015@FIN -->
+					
+				</TD>
+					
+			</TR>
+			</FORM>
+		</TABLE>
+		</DIV>
+
+		
+
+		<DIV id="tabs_evento_ACIA32138">
+		<TABLE cellspacing="0" cellpadding="0">
+			<TR>
+				<TD><br/></TD>
+			</TR>
+			<TR>
+				<TD class="agpcontenido" align="right">Sistema</TD>
+				<TD align="left"><INPUT type="text" name="GDGO_SISTEMA"
+					size="30" value="ACIA"
+					class="agptexto3" readonly="readonly" /></TD>
+				<TD class="agpcontenido" align="right">Estado AGRYPA</TD>
+				<TD align="left"><INPUT type="text" name="ESTADO" size="30"
+					value="Aprobado" class="agptexto3" readonly="readonly" /></TD>
+			</TR>
+			
+		            <TR>
+			            <TD class="agpcontenido" align="right">Fecha del suceso</TD>	                            									
+			            <TD align="left">
+			            
+			            <INPUT type="text" id="FCH_ACCIDEN" name="FCH_ACCIDEN" size="30" value="11/07/2019 17:15:00" title="11/07/2019 17:15:00" class="agptexto3" readonly="readonly" />
+			            
+			            </TD>
+			            
+			            
+		            
+			            <TD class="agpcontenido" align="right">Hora del suceso</TD>	                            									
+			            <TD align="left">
+			            
+			            <INPUT type="text" id="HORA_ACCIDEN" name="HORA_ACCIDEN" size="30" value="17" title="17" class="agptexto3" readonly="readonly" />
+			            
+			            </TD>
+			            </TR>
+			            
+		            <TR>
+			            <TD class="agpcontenido" align="right">Vehículo</TD>	                            									
+			            <TD align="left">
+			            
+			            <INPUT type="text" id="NMROS_UIC" name="NMROS_UIC" size="30" value="957103340056" title="957103340056" class="agptexto3" readonly="readonly" />
+			            
+			            </TD>
+			            
+			            
+		             <TD></TD></TR><TR> 
+			            <TD class="agpcontenido" align="right">Descripción de Hechos y Lugar</TD>	                            									
+			            <TD colspan="3" align="left">
+			            <textarea class="agptexto3" type="text" cols="100" rows="5" id="DESC_EV_ACIA" name="DESC_EV_ACIA" title="TREN 194 NO EFECTÚA LA PARADA COMERCIAL GRAFIADA EN LA ESTACIÓN DE LEGANÉS, SE INFORMA AL RESPONSABLE DE CIRCULACIÓN DE FUENLABRADA QUE ASEGURE LA PARADA EN VÍA 1 A LA ESPERAR DE LA LLEGADA DE LOS VIAJEROS EN TREN DE CERCANÍAS.
+LOS VIAJEROS LLEGAN A FUENLABRADA EN TREN DE CERCANÍAS 27506 Y EFECTÚA SU SALIDA A LAS 17:35 CON 29 MINUTOS DE RETRASO
+SE AVISA A LA GERENCIA DE SEGURIDAD DE RENFE OPERADORA" readonly>TREN 194 NO EFECTÚA LA PARADA COMERCIAL GRAFIADA EN LA ESTACIÓN DE LEGANÉS, SE INFORMA AL RESPONSABLE DE CIRCULACIÓN DE FUENLABRADA QUE ASEGURE LA PARADA EN VÍA 1 A LA ESPERAR DE LA LLEGADA DE LOS VIAJEROS EN TREN DE CERCANÍAS.
+LOS VIAJEROS LLEGAN A FUENLABRADA EN TREN DE CERCANÍAS 27506 Y EFECTÚA SU SALIDA A LAS 17:35 CON 29 MINUTOS DE RETRASO
+SE AVISA A LA GERENCIA DE SEGURIDAD DE RENFE OPERADORA</textarea>
+			            </TD>
+						</TR>
+		            
+		            
+			            <TD class="agpcontenido" align="right">Calificación de suceso</TD>	                            									
+			            <TD align="left">
+			            
+			            <INPUT type="text" id="DESC_CALIF_SUCESO" name="DESC_CALIF_SUCESO" size="30" value="Incidencia-Anomalía" title="Incidencia-Anomalía" class="agptexto3" readonly="readonly" />
+			            
+			            </TD>
+			            </TR>
+			            
+		            <TR>
+			            <TD class="agpcontenido" align="right">Denominación del suceso</TD>	                            									
+			            <TD align="left">
+			            
+			            <INPUT type="text" id="DESC_ACCIDEN" name="DESC_ACCIDEN" size="30" value="Error Itinerario (Entrada/Salida)" title="Error Itinerario (Entrada/Salida)" class="agptexto3" readonly="readonly" />
+			            
+			            </TD>
+			            
+			            
+		            
+			            <TD class="agpcontenido" align="right">Código suceso</TD>	                            									
+			            <TD align="left">
+			            
+			            <INPUT type="text" id="CDGO_SUCESO" name="CDGO_SUCESO" size="30" value="201903125" title="201903125" class="agptexto3" readonly="readonly" />
+			            
+			            </TD>
+			            </TR>
+			            
+		            <TR>
+			            <TD class="agpcontenido" align="right">Operador afectado</TD>	                            									
+			            <TD align="left">
+			            
+			            <INPUT type="text" id="DESC_OPERAFEC" name="DESC_OPERAFEC" size="30" value="Renfe Viajeros" title="Renfe Viajeros" class="agptexto3" readonly="readonly" />
+			            
+			            </TD>
+			            
+			            
+		            
+			            <TD class="agpcontenido" align="right">Denominación de la circulación</TD>	                            									
+			            <TD align="left">
+			            
+			            <INPUT type="text" id="DESC_CIRCULA" name="DESC_CIRCULA" size="30" value="Tren" title="Tren" class="agptexto3" readonly="readonly" />
+			            
+			            </TD>
+			            </TR>
+			            
+		            <TR>
+			            <TD class="agpcontenido" align="right">Clase de transporte</TD>	                            									
+			            <TD align="left">
+			            
+			            <INPUT type="text" id="DESC_CLASE" name="DESC_CLASE" size="30" value="Viajeros" title="Viajeros" class="agptexto3" readonly="readonly" />
+			            
+			            </TD>
+			            
+			            
+		            
+			            <TD class="agpcontenido" align="right">Datos de Tren / Maniobra</TD>	                            									
+			            <TD align="left">
+			            
+			            <INPUT type="text" id="NUMERO_TREN" name="NUMERO_TREN" size="30" value="194" title="194" class="agptexto3" readonly="readonly" />
+			            
+			            </TD>
+			            </TR>
+			            
+		            <TR>
+			            <TD class="agpcontenido" align="right">Velocidad real del Tren / Maniobra</TD>	                            									
+			            <TD align="left">
+			            
+			            <INPUT type="text" id="VELOCIDAD_TREN" name="VELOCIDAD_TREN" size="30" value="0" title="0" class="agptexto3" readonly="readonly" />
+			            
+			            </TD>
+			            
+			            
+		            
+			            <TD class="agpcontenido" align="right">Velocidad Máxima Permitida</TD>	                            									
+			            <TD align="left">
+			            
+			            <INPUT type="text" id="VELOCIDAD_PTO_KM" name="VELOCIDAD_PTO_KM" size="30" value="0" title="0" class="agptexto3" readonly="readonly" />
+			            
+			            </TD>
+			            </TR>
+			            
+		            <TR>
+			            <TD class="agpcontenido" align="right">Personal implicado</TD>	                            									
+			            <TD align="left">
+			            
+			            <INPUT type="text" id="MATRICULAS" name="MATRICULAS" size="30" value="6863070" title="6863070" class="agptexto3" readonly="readonly" />
+			            
+			            </TD>
+			            
+			            
+		            
+			            <TD class="agpcontenido" align="right">Composición del Tren</TD>	                            									
+			            <TD align="left">
+			            
+			            <INPUT type="text" id="COMPOSICION_TREN" name="COMPOSICION_TREN" size="30" value="957103340056" title="957103340056" class="agptexto3" readonly="readonly" />
+			            
+			            </TD>
+			            </TR>
+			            
+		            <TR>
+			            <TD class="agpcontenido" align="right">Contiene mercancías peligrosas</TD>	                            									
+			            <TD align="left">
+			            
+			            <INPUT type="text" id="MERC_PELI" name="MERC_PELI" size="30" value="N" title="N" class="agptexto3" readonly="readonly" />
+			            
+			            </TD>
+			            
+			            
+		            
+			            <TD class="agpcontenido" align="right">Lugar</TD>	                            									
+			            <TD align="left">
+			            
+			            <INPUT type="text" id="DESC_LUGAR" name="DESC_LUGAR" size="30" value="ADIF Convencional" title="ADIF Convencional" class="agptexto3" readonly="readonly" />
+			            
+			            </TD>
+			            </TR>
+			            
+		            <TR>
+			            <TD class="agpcontenido" align="right">Gerencia Territorial</TD>	                            									
+			            <TD align="left">
+			            
+			            <INPUT type="text" id="DESC_AMBITO" name="DESC_AMBITO" size="30" value="CENTRO" title="CENTRO" class="agptexto3" readonly="readonly" />
+			            
+			            </TD>
+			            
+			            
+		            
+			            <TD class="agpcontenido" align="right">Comunidad Autónoma</TD>	                            									
+			            <TD align="left">
+			            
+			            <INPUT type="text" id="DESC_AUTONO" name="DESC_AUTONO" size="30" value="Madrid" title="Madrid" class="agptexto3" readonly="readonly" />
+			            
+			            </TD>
+			            </TR>
+			            
+		            <TR>
+			            <TD class="agpcontenido" align="right">Provincia</TD>	                            									
+			            <TD align="left">
+			            
+			            <INPUT type="text" id="DESC_PROVIN" name="DESC_PROVIN" size="30" value="Madrid" title="Madrid" class="agptexto3" readonly="readonly" />
+			            
+			            </TD>
+			            
+			            
+		            
+			            <TD class="agpcontenido" align="right">Tipo de Lugar</TD>	                            									
+			            <TD align="left">
+			            
+			            <INPUT type="text" id="DESC_TIPO_RFIG" name="DESC_TIPO_RFIG" size="30" value="Estación ADIF Convencional" title="Estación ADIF Convencional" class="agptexto3" readonly="readonly" />
+			            
+			            </TD>
+			            </TR>
+			            
+		            <TR>
+			            <TD class="agpcontenido" align="right">DEC</TD>	                            									
+			            <TD align="left">
+			            
+			            <INPUT type="text" id="DEC" name="DEC" size="30" value="" title="" class="agptexto3" readonly="readonly" />
+			            
+			            </TD>
+			            
+			            
+		            
+			            <TD class="agpcontenido" align="right">Paso a Nivel</TD>	                            									
+			            <TD align="left">
+			            
+			            <INPUT type="text" id="PASO_NIVEL" name="PASO_NIVEL" size="30" value="N" title="N" class="agptexto3" readonly="readonly" />
+			            
+			            </TD>
+			            </TR>
+			            
+		            <TR>
+			            <TD class="agpcontenido" align="right">Desde Estación (código)</TD>	                            									
+			            <TD align="left">
+			            
+			            <INPUT type="text" id="CDGO_ESTA_1" name="CDGO_ESTA_1" size="30" value="35001" title="35001" class="agptexto3" readonly="readonly" />
+			            
+			            </TD>
+			            
+			            
+		            
+			            <TD class="agpcontenido" align="right">Desde Estación (descripción)</TD>	                            									
+			            <TD align="left">
+			            
+			            <INPUT type="text" id="DESC_ESTA_1" name="DESC_ESTA_1" size="30" value="LEGANES" title="LEGANES" class="agptexto3" readonly="readonly" />
+			            
+			            </TD>
+			            </TR>
+			            
+		            <TR>
+			            <TD class="agpcontenido" align="right">Hasta Estación (código)</TD>	                            									
+			            <TD align="left">
+			            
+			            <INPUT type="text" id="CDGO_ESTA_2" name="CDGO_ESTA_2" size="30" value="" title="" class="agptexto3" readonly="readonly" />
+			            
+			            </TD>
+			            
+			            
+		            
+			            <TD class="agpcontenido" align="right">Hasta Estación (descripción)</TD>	                            									
+			            <TD align="left">
+			            
+			            <INPUT type="text" id="DESC_ESTA_2" name="DESC_ESTA_2" size="30" value="" title="" class="agptexto3" readonly="readonly" />
+			            
+			            </TD>
+			            </TR>
+			            
+		            <TR>
+			            <TD class="agpcontenido" align="right">Tipo de Estación</TD>	                            									
+			            <TD align="left">
+			            
+			            <INPUT type="text" id="DESC_TIPO_ESTA" name="DESC_TIPO_ESTA" size="30" value="Estación" title="Estación" class="agptexto3" readonly="readonly" />
+			            
+			            </TD>
+			            
+			            
+		            
+			            <TD class="agpcontenido" align="right">Línea</TD>	                            									
+			            <TD align="left">
+			            
+			            <INPUT type="text" id="DESC_TIPOLINEA" name="DESC_TIPOLINEA" size="30" value="BIF. PLANETARIO / VALENCIA DE ALCANTARA" title="BIF. PLANETARIO / VALENCIA DE ALCANTARA" class="agptexto3" readonly="readonly" />
+			            
+			            </TD>
+			            </TR>
+			            
+		            <TR>
+			            <TD class="agpcontenido" align="right">Tipo de Línea</TD>	                            									
+			            <TD align="left">
+			            
+			            <INPUT type="text" id="DESC_TIPO_LI" name="DESC_TIPO_LI" size="30" value="TRAYECTO B" title="TRAYECTO B" class="agptexto3" readonly="readonly" />
+			            
+			            </TD>
+			            
+			            
+		            
+			            <TD class="agpcontenido" align="right">Punto Kilométrico</TD>	                            									
+			            <TD align="left">
+			            
+			            <INPUT type="text" id="PUNTO_KM" name="PUNTO_KM" size="30" value="0" title="0" class="agptexto3" readonly="readonly" />
+			            
+			            </TD>
+			            </TR>
+			            
+		            <TR>
+			            <TD class="agpcontenido" align="right">Organismo Gestor</TD>	                            									
+			            <TD align="left">
+			            
+			            <INPUT type="text" id="DESC_ORG_GEST" name="DESC_ORG_GEST" size="30" value="RENFE Viajeros" title="RENFE Viajeros" class="agptexto3" readonly="readonly" />
+			            
+			            </TD>
+			            
+			            
+		            
+			            <TD class="agpcontenido" align="right">Tipo de Bloqueo</TD>	                            									
+			            <TD align="left">
+			            
+			            <INPUT type="text" id="DESC_TIPO_BLOQ" name="DESC_TIPO_BLOQ" size="30" value="" title="" class="agptexto3" readonly="readonly" />
+			            
+			            </TD>
+			            </TR>
+			            
+		            <TR>
+			            <TD class="agpcontenido" align="right">Tipo de Vía</TD>	                            									
+			            <TD align="left">
+			            
+			            <INPUT type="text" id="CDGO_TIPO_VIA" name="CDGO_TIPO_VIA" size="30" value="0" title="0" class="agptexto3" readonly="readonly" />
+			            
+			            </TD>
+			            
+			            
+		            
+			            <TD class="agpcontenido" align="right">Referencias Geográficas</TD>	                            									
+			            <TD align="left">
+			            
+			            <INPUT type="text" id="REF_GEO" name="REF_GEO" size="30" value="" title="" class="agptexto3" readonly="readonly" />
+			            
+			            </TD>
+			            </TR>
+			            
+		            <TR>
+			            <TD class="agpcontenido" align="right">Número de Señal</TD>	                            									
+			            <TD align="left">
+			            
+			            <INPUT type="text" id="NUM_SENAL" name="NUM_SENAL" size="30" value="" title="" class="agptexto3" readonly="readonly" />
+			            
+			            </TD>
+			            
+			            
+		            
+			            <TD class="agpcontenido" align="right">Tipo de Señal</TD>	                            									
+			            <TD align="left">
+			            
+			            <INPUT type="text" id="DESC_TIPO_SENAL" name="DESC_TIPO_SENAL" size="30" value="" title="" class="agptexto3" readonly="readonly" />
+			            
+			            </TD>
+			            </TR>
+			            
+		            <TR>
+			            <TD class="agpcontenido" align="right">Señal - Dotación de Balizas</TD>	                            									
+			            <TD align="left">
+			            
+			            <INPUT type="text" id="DESC_DOT_BALIZAS" name="DESC_DOT_BALIZAS" size="30" value="" title="" class="agptexto3" readonly="readonly" />
+			            
+			            </TD>
+			            
+			            
+		            
+			            <TD class="agpcontenido" align="right">Señal - Particularidades</TD>	                            									
+			            <TD align="left">
+			            
+			            <INPUT type="text" id="DESC_PAR_SENAL" name="DESC_PAR_SENAL" size="30" value="" title="" class="agptexto3" readonly="readonly" />
+			            
+			            </TD>
+			            </TR>
+			            
+		            <TR>
+			            <TD class="agpcontenido" align="right">Señal - Visibilidad de la infraestructura</TD>	                            									
+			            <TD align="left">
+			            
+			            <INPUT type="text" id="DESC_VISIB_INFRA" name="DESC_VISIB_INFRA" size="30" value="" title="" class="agptexto3" readonly="readonly" />
+			            
+			            </TD>
+			            
+			            
+		            
+			            <TD class="agpcontenido" align="right">Meteorología - Tipología</TD>	                            									
+			            <TD align="left">
+			            
+			            <INPUT type="text" id="DESC_INT_METEO" name="DESC_INT_METEO" size="30" value="" title="" class="agptexto3" readonly="readonly" />
+			            
+			            </TD>
+			            </TR>
+			            
+		            <TR>
+			            <TD class="agpcontenido" align="right">Meteorología - Intensidad</TD>	                            									
+			            <TD align="left">
+			            
+			            <INPUT type="text" id="DESC_TIPO_METEO" name="DESC_TIPO_METEO" size="30" value="" title="" class="agptexto3" readonly="readonly" />
+			            
+			            </TD>
+			            
+			            
+		            
+			            <TD class="agpcontenido" align="right">Tipo causa</TD>	                            									
+			            <TD align="left">
+			            
+			            <INPUT type="text" id="DESC_TIPO_CAUSA" name="DESC_TIPO_CAUSA" size="30" value="Fallo por Factor Humano" title="Fallo por Factor Humano" class="agptexto3" readonly="readonly" />
+			            
+			            </TD>
+			            </TR>
+			            
+		            <TR>
+			            <TD class="agpcontenido" align="right">Tipo fallo compuesto</TD>	                            									
+			            <TD align="left">
+			            
+			            <INPUT type="text" id="DESC_CAUSA_COMP" name="DESC_CAUSA_COMP" size="30" value="" title="" class="agptexto3" readonly="readonly" />
+			            
+			            </TD>
+			            
+			            
+		            <TD></TD></TR>
+		</TABLE>
+		</DIV>
+		
+
+		<DIV id="tabs_evento_COPERNICO819796">
+		<TABLE cellspacing="0" cellpadding="0">
+			<TR>
+				<TD><br/></TD>
+			</TR>
+			<TR>
+				<TD class="agpcontenido" align="right">Sistema</TD>
+				<TD align="left"><INPUT type="text" name="GDGO_SISTEMA"
+					size="30" value="COPERNICO"
+					class="agptexto3" readonly="readonly" /></TD>
+				<TD class="agpcontenido" align="right">Estado AGRYPA</TD>
+				<TD align="left"><INPUT type="text" name="ESTADO" size="30"
+					value="Aprobado" class="agptexto3" readonly="readonly" /></TD>
+			</TR>
+			
+		            <TR>
+			            <TD class="agpcontenido" align="right">Fecha / Hora inicio incidencia</TD>	                            									
+			            <TD align="left">
+			            
+			            <INPUT type="text" id="FECHA_INC" name="FECHA_INC" size="30" value="11/07/2019 17:00:00" title="11/07/2019 17:00:00" class="agptexto3" readonly="readonly" />
+			            
+			            </TD>
+			            
+			            
+		            
+			            <TD class="agpcontenido" align="right">Material motor</TD>	                            									
+			            <TD align="left">
+			            
+			            <INPUT type="text" id="LOCOMOTORA" name="LOCOMOTORA" size="30" value="" title="" class="agptexto3" readonly="readonly" />
+			            
+			            </TD>
+			            </TR>
+			            
+		            <TR>
+			            <TD class="agpcontenido" align="right">Material remolcado</TD>	                            									
+			            <TD align="left">
+			            
+			            <INPUT type="text" id="COMPOSICION" name="COMPOSICION" size="30" value="" title="" class="agptexto3" readonly="readonly" />
+			            
+			            </TD>
+			            
+			            
+		            
+			            <TD class="agpcontenido" align="right">Descripción</TD>	                            									
+			            <TD align="left">
+			            
+			            <INPUT type="text" id="DESC_INC" name="DESC_INC" size="30" value="Maquinista manifiesta haberse pasado la parada de Leganes." title="Maquinista manifiesta haberse pasado la parada de Leganes." class="agptexto3" readonly="readonly" />
+			            
+			            </TD>
+			            </TR>
+			            
+		            <TR>
+			            <TD class="agpcontenido" align="right">Tipo</TD>	                            									
+			            <TD align="left">
+			            
+			            <INPUT type="text" id="TIPO" name="TIPO" size="30" value="T" title="T" class="agptexto3" readonly="readonly" />
+			            
+			            </TD>
+			            
+			            
+		            
+			            <TD class="agpcontenido" align="right">Estación inicio</TD>	                            									
+			            <TD align="left">
+			            
+			            <INPUT type="text" id="PUNTO_DESDE" name="PUNTO_DESDE" size="30" value="35001" title="35001" class="agptexto3" readonly="readonly" />
+			            
+			            </TD>
+			            </TR>
+			            
+		            <TR>
+			            <TD class="agpcontenido" align="right">Estación fin</TD>	                            									
+			            <TD align="left">
+			            
+			            <INPUT type="text" id="PUNTO_HASTA" name="PUNTO_HASTA" size="30" value="35001" title="35001" class="agptexto3" readonly="readonly" />
+			            
+			            </TD>
+			            
+			            
+		            
+			            <TD class="agpcontenido" align="right">Intervinientes</TD>	                            									
+			            <TD align="left">
+			            
+			            <INPUT type="text" id="DATOS_MATRICULAS" name="DATOS_MATRICULAS" size="30" value="6849657|6863070|2800597" title="6849657|6863070|2800597" class="agptexto3" readonly="readonly" />
+			            
+			            </TD>
+			            </TR>
+			            
+		            <TR>
+			            <TD class="agpcontenido" align="right">Maquinista / Interventor</TD>	                            									
+			            <TD align="left">
+			            
+			            <INPUT type="text" id="DATOS_MAQ_INT" name="DATOS_MAQ_INT" size="30" value="Maquinista|Maquinista|Interventor" title="Maquinista|Maquinista|Interventor" class="agptexto3" readonly="readonly" />
+			            
+			            </TD>
+			            
+			            
+		            
+			            <TD class="agpcontenido" align="right">Fecha / Hora fin incidencia</TD>	                            									
+			            <TD align="left">
+			            
+			            <INPUT type="text" id="FECHA_FIN_INC" name="FECHA_FIN_INC" size="30" value="11/07/2019 17:00:00" title="11/07/2019 17:00:00" class="agptexto3" readonly="readonly" />
+			            
+			            </TD>
+			            </TR>
+			            
+		            <TR>
+			            <TD class="agpcontenido" align="right">Servicio (nº tren)</TD>	                            									
+			            <TD align="left">
+			            
+			            <INPUT type="text" id="COD_SERV" name="COD_SERV" size="30" value="00194" title="00194" class="agptexto3" readonly="readonly" />
+			            
+			            </TD>
+			            
+			            
+		            
+			            <TD class="agpcontenido" align="right">Área</TD>	                            									
+			            <TD align="left">
+			            
+			            <INPUT type="text" id="AREA" name="AREA" size="30" value="SC SUR" title="SC SUR" class="agptexto3" readonly="readonly" />
+			            
+			            </TD>
+			            </TR>
+			            
+		            <TR>
+			            <TD class="agpcontenido" align="right">SubArea</TD>	                            									
+			            <TD align="left">
+			            
+			            <INPUT type="text" id="SUBAREA" name="SUBAREA" size="30" value="LD DIURNO SUR" title="LD DIURNO SUR" class="agptexto3" readonly="readonly" />
+			            
+			            </TD>
+			            
+			            
+		            
+			            <TD class="agpcontenido" align="right">Producto</TD>	                            									
+			            <TD align="left">
+			            
+			            <INPUT type="text" id="PRODUCTO" name="PRODUCTO" size="30" value="Talgo" title="Talgo" class="agptexto3" readonly="readonly" />
+			            
+			            </TD>
+			            </TR>
+			            
+		            <TR>
+			            <TD class="agpcontenido" align="right">Serie</TD>	                            									
+			            <TD align="left">
+			            
+			            <INPUT type="text" id="SERIE" name="SERIE" size="30" value="Talgo V I" title="Talgo V I" class="agptexto3" readonly="readonly" />
+			            
+			            </TD>
+			            
+			            
+		            
+			            <TD class="agpcontenido" align="right">Grupo incidencia</TD>	                            									
+			            <TD align="left">
+			            
+			            <INPUT type="text" id="DES_GRUPO" name="DES_GRUPO" size="30" value="GESTION OPERADOR" title="GESTION OPERADOR" class="agptexto3" readonly="readonly" />
+			            
+			            </TD>
+			            </TR>
+			            
+		            <TR>
+			            <TD class="agpcontenido" align="right">Tipo incidencia</TD>	                            									
+			            <TD align="left">
+			            
+			            <INPUT type="text" id="DESCRIPCION" name="DESCRIPCION" size="30" value="Infracción Reglamento ( Operador)" title="Infracción Reglamento ( Operador)" class="agptexto3" readonly="readonly" />
+			            
+			            </TD>
+			            
+			            
+		            
+			            <TD class="agpcontenido" align="right">Reparado</TD>	                            									
+			            <TD align="left">
+			            
+			            <INPUT type="text" id="REPARACION" name="REPARACION" size="30" value="N" title="N" class="agptexto3" readonly="readonly" />
+			            
+			            </TD>
+			            </TR>
+			            
+		            <TR>
+			            <TD class="agpcontenido" align="right">Consecuencias y Previsiones</TD>	                            									
+			            <TD colspan="3" align="left">
+			            <textarea class="agptexto3" type="text" cols="100" rows="5" id="CONSECUENCIAS_INC" name="CONSECUENCIAS_INC" title="Se gestiona con personal de Leganes encaminar en siguiente cercanias para Fuenlabrada donde les esta esperando el Talgo." readonly>Se gestiona con personal de Leganes encaminar en siguiente cercanias para Fuenlabrada donde les esta esperando el Talgo.</textarea>
+			            </TD>
+						</TR>
+		            
+		            <TR>
+			            <TD class="agpcontenido" align="right">Acciones Comerciales</TD>	                            									
+			            <TD align="left">
+			            
+			            <INPUT type="text" id="ACCIONES_COMER" name="ACCIONES_COMER" size="30" value="" title="" class="agptexto3" readonly="readonly" />
+			            
+			            </TD>
+			            
+			            
+		            
+			            <TD class="agpcontenido" align="right">Consecuencias - Tiempo retraso</TD>	                            									
+			            <TD align="left">
+			            
+			            <INPUT type="text" id="RETRASO" name="RETRASO" size="30" value="029" title="029" class="agptexto3" readonly="readonly" />
+			            
+			            </TD>
+			            </TR>
+			            
+		            <TR>
+			            <TD class="agpcontenido" align="right">Consecuencias - Servicio Transbordado</TD>	                            									
+			            <TD align="left">
+			            
+			            <INPUT type="text" id="TRANSBORDO" name="TRANSBORDO" size="30" value="N" title="N" class="agptexto3" readonly="readonly" />
+			            
+			            </TD>
+			            
+			            
+		            
+			            <TD class="agpcontenido" align="right">Consecuencias - Número Clientes Transbordados</TD>	                            									
+			            <TD align="left">
+			            
+			            <INPUT type="text" id="CLITRAS" name="CLITRAS" size="30" value="000" title="000" class="agptexto3" readonly="readonly" />
+			            
+			            </TD>
+			            </TR>
+			            
+		            <TR>
+			            <TD class="agpcontenido" align="right">Consecuencias - Número Clientes Indemnizables</TD>	                            									
+			            <TD align="left">
+			            
+			            <INPUT type="text" id="NUM_INDEMNIZABLES" name="NUM_INDEMNIZABLES" size="30" value="000" title="000" class="agptexto3" readonly="readonly" />
+			            
+			            </TD>
+			            
+			            
+		            
+			            <TD class="agpcontenido" align="right">Código</TD>	                            									
+			            <TD align="left">
+			            
+			            <INPUT type="text" id="ID_COPERNICO" name="ID_COPERNICO" size="30" value="8D6A619006EA632DE0535C4CF50ADB4B" title="8D6A619006EA632DE0535C4CF50ADB4B" class="agptexto3" readonly="readonly" />
+			            
+			            </TD>
+			            </TR>
+			            
+		            <TR>
+			            <TD class="agpcontenido" align="right">Estado COPERNICO</TD>	                            									
+			            <TD align="left">
+			            
+			            <INPUT type="text" id="CODIGO_ESTADO" name="CODIGO_ESTADO" size="30" value="1" title="1" class="agptexto3" readonly="readonly" />
+			            
+			            </TD>
+			            
+			            
+		            <TD></TD></TR>
+		</TABLE>
+		</DIV>
+		  
+		<DIV id="tabs_det_analisis">
+		
+		<FORM id="form_evento_circulacion" name="form_evento_circulacion">
+		<INPUT type="hidden" name="pestanaSeleccionada" value="">
+		<INPUT type="hidden" value="112234"
+			name="ID_EV_CIR" />
+		<TABLE width="100%" cellspacing="0" cellpadding="0">
+			<TR>
+				<TD><br/></TD>
+			</TR>
+			<TR>
+				<TD colspan="4" height="17" class="agpsubtitulo"><SPAN>ANÁLISIS</SPAN></TD>
+			</TR>
+			<TR>
+				<TD><br/></TD>
+			</TR>
+			<TR>
+				<TD colspan="4" class="agpcontenido"><b>Análisis del Suceso</b></TD>
+			</TR>
+			<TR>
+				<TD><br/></TD>
+			</TR>
+			
+			<TR>
+				<TD class="agpcontenido">Consecuencias:</TD>
+				<TD>
+					<SELECT class="agpselect1" name="CONSECUENCIAS">
+						<OPTION value=""></OPTION>
+						
+							<OPTION value="21"
+							selected="selected">00 - Sin consecuencias</OPTION>
+						
+							<OPTION value="2"
+							>01 - Colisión entre vehículos ferroviarios</OPTION>
+						
+							<OPTION value="3"
+							>02 - Colisión con topera</OPTION>
+						
+							<OPTION value="4"
+							>03 - Talonamiento</OPTION>
+						
+							<OPTION value="5"
+							>04 - Arrollamiento calce</OPTION>
+						
+							<OPTION value="6"
+							>05 - Descarrilamiento</OPTION>
+						
+							<OPTION value="7"
+							>06 - Incendio</OPTION>
+						
+							<OPTION value="8"
+							>07 - Fraccionamiento tren</OPTION>
+						
+							<OPTION value="9"
+							>08 - Daños materiales vehículo</OPTION>
+						
+							<OPTION value="10"
+							>09 - Daños clientes</OPTION>
+						
+							<OPTION value="41"
+							>10 - Arrollamiento obstáculos</OPTION>
+						
+							<OPTION value="61"
+							>11 - Rebase de señal</OPTION>
+						
+							<OPTION value="81"
+							>12 - Atraviesa un punto de peligro</OPTION>
+						
+					</SELECT>
+				</TD>
+				<TD class="agpcontenido">Situación / Función:</TD>
+				<TD>
+					<SELECT class="agpselect1" name="SIT_FUNC">
+						<OPTION value=""></OPTION>
+						
+							<OPTION value="21"
+							>00 - Sin particularidades</OPTION>
+						
+							<OPTION value="1"
+							>01 - Finalización de jornada</OPTION>
+						
+							<OPTION value="2"
+							>02 - Incidencia de luz solar sobre la señal</OPTION>
+						
+							<OPTION value="3"
+							>03 - Inicio de tren</OPTION>
+						
+							<OPTION value="4"
+							>04 - Itinerario inhabitual</OPTION>
+						
+							<OPTION value="5"
+							selected="selected">05 - No para en la estación</OPTION>
+						
+							<OPTION value="6"
+							>06 - Para fuera de andén</OPTION>
+						
+							<OPTION value="7"
+							>07 - Parado ante la señal</OPTION>
+						
+							<OPTION value="8"
+							>08 - Personal no autorizado en cabina</OPTION>
+						
+							<OPTION value="9"
+							>09 - Rebase tras parada comercial</OPTION>
+						
+							<OPTION value="10"
+							>10 - Relevo de personal</OPTION>
+						
+							<OPTION value="11"
+							>11 - Salida antes de hora</OPTION>
+						
+							<OPTION value="12"
+							>12 - Señal con visibilidad reducida</OPTION>
+						
+							<OPTION value="13"
+							>13 - Paso por Bifurcación</OPTION>
+						
+							<OPTION value="14"
+							>14 - Paso por cambiador de ancho</OPTION>
+						
+							<OPTION value="15"
+							>15 - Tren circula con retraso</OPTION>
+						
+							<OPTION value="16"
+							>16 - Señal apagada</OPTION>
+						
+							<OPTION value="17"
+							>17 - Realizar paradas no programadas</OPTION>
+						
+							<OPTION value="18"
+							>18 - Conducción cabina contraria</OPTION>
+						
+							<OPTION value="19"
+							>19 - Estacionándose</OPTION>
+						
+							<OPTION value="41"
+							>20 - Itinerario mal establecido</OPTION>
+						
+							<OPTION value="61"
+							>21 - Velocidad prefijada</OPTION>
+						
+							<OPTION value="81"
+							>22 - Inicio de jornada</OPTION>
+						
+							<OPTION value="101"
+							>23 - Situación degradada instalaciones</OPTION>
+						
+							<OPTION value="121"
+							>24 - Salida sin recibir la finalización de las operaciones del tren </OPTION>
+						
+							<OPTION value="141"
+							>25 - No autoriza la apertura de puertas</OPTION>
+						
+							<OPTION value="161"
+							>26 - Salida sin recibir la orden de marcha</OPTION>
+						
+							<OPTION value="181"
+							>27 - Alumno de la ETPCO realizando prácticas</OPTION>
+						
+							<OPTION value="201"
+							>28 - Transición de vía doble a vía única</OPTION>
+						
+					</SELECT>
+				</TD>
+			</TR>
+			
+			<TR>
+				<TD class="agpcontenido">Incidencia / Anomalía:</TD>
+				<TD><SELECT class="agpselect1" name="TIPO_SUCESO">
+					<OPTION value=""></OPTION>
+					
+					<OPTION value="16"
+						>Acondicionar/Asegurar el tren inadecuadamente</OPTION>
+					
+					<OPTION value="17"
+						>Acoplamiento a material de forma brusca</OPTION>
+					
+					<OPTION value="18"
+						>Aproximación no segura a topera </OPTION>
+					
+					<OPTION value="10"
+						>Carga mal acondicionada</OPTION>
+					
+					<OPTION value="13"
+						>Conducción desde cabina contraria</OPTION>
+					
+					<OPTION value="08"
+						>Conducción insegura/no suave</OPTION>
+					
+					<OPTION value="05"
+						>Escape de material</OPTION>
+					
+					<OPTION value="21"
+						>Estacionamiento no seguro sobre material </OPTION>
+					
+					<OPTION value="09"
+						>Exceso de Velocidad Tramo</OPTION>
+					
+					<OPTION value="14"
+						>Exceso Velocidad Control Equipo de Seguridad</OPTION>
+					
+					<OPTION value="22"
+						>Exceso velocidad paso por agujas</OPTION>
+					
+					<OPTION value="15"
+						>Gestión de apertura/cierre puertas </OPTION>
+					
+					<OPTION value="06"
+						>Inadecuada preparación de tren</OPTION>
+					
+					<OPTION value="03"
+						>Inapropiada gestión frenos estacionamiento</OPTION>
+					
+					<OPTION value="02"
+						selected="selected">Incumplimiento Parada Comercial</OPTION>
+					
+					<OPTION value="23"
+						>Movimiento de tren no controlado</OPTION>
+					
+					<OPTION value="12"
+						>Movimiento No Autorizado</OPTION>
+					
+					<OPTION value="00"
+						>Otros</OPTION>
+					
+					<OPTION value="11"
+						>Positivo en control A/D</OPTION>
+					
+					<OPTION value="20"
+						>Rebase alto a la tracción eléctrica</OPTION>
+					
+					<OPTION value="01"
+						>Rebase de Señal</OPTION>
+					
+					<OPTION value="07"
+						>Resolución de avería inapropiada</OPTION>
+					
+					<OPTION value="04"
+						>Resolución incidencia incorrecta</OPTION>
+					
+				</SELECT></TD>
+				<TD class="agpcontenido">Distractores:</TD>
+				<TD><SELECT class="agpselect1" name="DISTRACTORES">
+					<OPTION value=""></OPTION>
+					
+					<OPTION value="04"
+						>Consulta documentación reglamentaria</OPTION>
+					
+					<OPTION value="03"
+						>Consulta/manipulación sistemas cabina</OPTION>
+					
+					<OPTION value="06"
+						>Pensamientos/preocupaciones internos</OPTION>
+					
+					<OPTION value="02"
+						>Personal en cabina</OPTION>
+					
+					<OPTION value="08"
+						>Personas/clientes en andén</OPTION>
+					
+					<OPTION value="07"
+						>Trabajos proximidades vía</OPTION>
+					
+					<OPTION value="01"
+						>Uso del teléfono móvil corporativo</OPTION>
+					
+					<OPTION value="05"
+						>Uso distractores personales</OPTION>
+					
+				</SELECT></TD>
+			</TR>
+			<TR>
+				<TD class="agpcontenido">Accionamiento de Freno:</TD>
+				<TD><SELECT class="agpselect1" name="AC_FRENADO"
+					id="AD_FRENADO">
+					<OPTION value=""></OPTION>
+					
+					<OPTION value="02"
+						>Por actuación de maquinista</OPTION>
+					
+					<OPTION value="01"
+						>Por protección de sistemas</OPTION>
+					
+				</SELECT></TD>
+				<TD class="agpcontenido">Particularidades:</TD>
+				<TD><SELECT class="agpselect1" name="PARTICULARIDADES_EV_CIR">
+					<OPTION value=""></OPTION>
+					
+					<OPTION value="13"
+						>Arrollamiento de calce</OPTION>
+					
+					<OPTION value="15"
+						>Colisión con topera</OPTION>
+					
+					<OPTION value="16"
+						>Colisión entre vehículos ferroviarios</OPTION>
+					
+					<OPTION value="12"
+						>Conato de colisión</OPTION>
+					
+					<OPTION value="11"
+						>Descarrilamiento</OPTION>
+					
+					<OPTION value="17"
+						>Escape de material</OPTION>
+					
+					<OPTION value="00"
+						>Sin efectos</OPTION>
+					
+					<OPTION value="14"
+						>Talonamiento</OPTION>
+					
+				</SELECT></TD>
+			</TR>
+			<TR>
+				<TD class="agpcontenido">Tiempo de retraso:</TD>
+				<TD><INPUT type="text" class="agptexto1" name="TIEMPO_RETRASO"
+					value="029" />
+				</TD>
+				<TD class="agpcontenido">Entorno operacional:</TD>
+				<TD><SELECT class="agpselect1" name="ENTORNO_OP">
+					<OPTION value=""></OPTION>
+					
+							<OPTION value="03"
+							>A. V.</OPTION>
+						
+					
+							<OPTION value="07"
+							>A. V. MD.</OPTION>
+						
+					
+							<OPTION value="04"
+							>Cercanías</OPTION>
+						
+					
+							<OPTION value="06"
+							>Integria</OPTION>
+						
+					
+							<OPTION value="01"
+							selected="selected">L. Distancia</OPTION>
+						
+					
+							<OPTION value="02"
+							>M. Distancia</OPTION>
+						
+					
+							<OPTION value="08"
+							>Maniobras</OPTION>
+						
+					
+							<OPTION value="05"
+							>Mercancías</OPTION>
+						
+					
+							<OPTION value="10"
+							>Mercancías (SAM)</OPTION>
+						
+					
+							<OPTION value="09"
+							>Viajeros (SAM)</OPTION>
+						
+					
+				</SELECT></TD>
+			</TR>
+			<TR>
+				<TD class="agpcontenido">Control de alcohol:</TD>
+				<OPTION value=""></OPTION>
+				<TD><SELECT class="agpselect1" name="CONTROL_ALCOHOL">
+					<OPTION value=""></OPTION>
+					
+					<OPTION value="02"
+						>No</OPTION>
+					
+					<OPTION value="01"
+						>Sí</OPTION>
+					
+				</SELECT></TD>
+				<TD class="agpcontenido">Modo de conducción:</TD>
+				<TD><SELECT class="agpselect1" name="MODO_CONDUCCION">
+					<OPTION value=""></OPTION>
+					
+					<OPTION value="04"
+						>Acoplamiento</OPTION>
+					
+					<OPTION value="03"
+						>Maniobra</OPTION>
+					
+					<OPTION value="01"
+						>Manual</OPTION>
+					
+					<OPTION value="02"
+						>Velocidad Prefijada</OPTION>
+					
+				</SELECT></TD>
+			</TR>
+			<TR>
+				<TD class="agpcontenido">Índice de alcohol:</TD>
+				<TD><SELECT class="agpselect1" name="INDICE_ALCOHOL">
+					<OPTION value=""></OPTION>
+					
+					<OPTION value="02"
+						>I<0.05</OPTION>
+					
+					<OPTION value="03"
+						>I>0.05</OPTION>
+					
+					<OPTION value="01"
+						>0.00</OPTION>
+					
+				</SELECT></TD>
+				<TD class="agpcontenido">Sistema de seguridad:</TD>
+				<TD><SELECT class="agpselect1" name="SIST_SEGURIDAD">
+					<OPTION value=""></OPTION>
+					
+					<OPTION value="01"
+						>ASFA</OPTION>
+					
+					<OPTION value="02"
+						>ASFA digital</OPTION>
+					
+					<OPTION value="05"
+						>Desconectado</OPTION>
+					
+					<OPTION value="04"
+						>ETCS N1</OPTION>
+					
+					<OPTION value="06"
+						>ETCS N2</OPTION>
+					
+					<OPTION value="03"
+						>LZB</OPTION>
+					
+				</SELECT></TD>
+
+			</TR>
+			<TR>
+				<TD class="agpcontenido">Control de drogas:</TD>
+				<TD><SELECT class="agpselect1" name="CONTROL_DROGAS">
+					<OPTION value=""></OPTION>
+					
+					<OPTION value="02"
+						>Negativo</OPTION>
+					
+					<OPTION value="01"
+						>Positivo</OPTION>
+					
+				</SELECT></TD>
+
+
+				<TD class="agpcontenido">Tipo de sistema degradados:</TD>
+				<TD><SELECT class="agpselect1" name="TIPO_SIST_DEGRADADOS">
+					<OPTION value=""></OPTION>
+					
+					<OPTION value="03"
+						>Bloqueo</OPTION>
+					
+					<OPTION value="06"
+						>Sistema Comunicación</OPTION>
+					
+					<OPTION value="05"
+						>Sistema Seguiridad</OPTION>
+					
+					<OPTION value="04"
+						>Sistema Señalización</OPTION>
+					
+					<OPTION value="01"
+						>Vehículo</OPTION>
+					
+					<OPTION value="02"
+						>Vía</OPTION>
+					
+				</SELECT></TD>
+			</TR>
+			<TR>
+				<!--
+									<TD display='none' class="agpcontenido">Observación de sistema degradados:</TD>
+									<TD>
+									-->
+				<!--<TD>
+									<INPUT type="hidden" class="agptexto1" name="OBS_SIST_DEGRADADOS" value="" />
+									</TD>
+									-->
+				<TD class="agpcontenido">Rebase señal:</TD>
+				<TD><SELECT class="agpselect1" name="REBASE_SENNAL">
+					<OPTION value=""></OPTION>
+					
+					<OPTION value="N"
+						selected="selected">No</OPTION>
+					
+					<OPTION value="S"
+						>Sí</OPTION>
+					
+				</SELECT></TD>
+				<TD class="agpcontenido">Tipo de Bloqueo:</TD>
+				<TD><SELECT class="agpselect1" name="TIPO_BLOQUEO"
+					id="TIPO_BLOQUEO">
+					<OPTION value=""></OPTION>
+					
+					<OPTION value="08"
+						>BAB con CTC</OPTION>
+					
+					<OPTION value="02"
+						>BAB sin CTC</OPTION>
+					
+					<OPTION value="07"
+						>BAD con CTC</OPTION>
+					
+					<OPTION value="03"
+						>BAD sin CTC</OPTION>
+					
+					<OPTION value="18"
+						>BAS/BSL</OPTION>
+					
+					<OPTION value="06"
+						>BAU con CTC</OPTION>
+					
+					<OPTION value="01"
+						>BAU sin CTC</OPTION>
+					
+					<OPTION value="11"
+						>BCA</OPTION>
+					
+					<OPTION value="12"
+						>BEM</OPTION>
+					
+					<OPTION value="10"
+						>BLAD con CTC</OPTION>
+					
+					<OPTION value="05"
+						>BLAD sin CTC</OPTION>
+					
+					<OPTION value="09"
+						>BLAU con CTC</OPTION>
+					
+					<OPTION value="04"
+						>BLAU sin CTC</OPTION>
+					
+					<OPTION value="16"
+						>Bloqueo por ocupación</OPTION>
+					
+					<OPTION value="13"
+						>Bloqueo Telefónico Normal</OPTION>
+					
+					<OPTION value="14"
+						>Bloqueo Telefónico Supletorio</OPTION>
+					
+					<OPTION value="19"
+						>CCR</OPTION>
+					
+					<OPTION value="17"
+						>EVB</OPTION>
+					
+					<OPTION value="15"
+						>Vía Única Temporal</OPTION>
+					
+				</SELECT></TD>
+
+			</TR>
+			<TR>
+				<TD class="agpcontenido">Tipo de señal:</TD>
+				<TD><SELECT class="agpselect1" name="TIPO_SENNAL">
+					<OPTION value=""></OPTION>
+					
+					<OPTION value="02"
+						>Avanzada</OPTION>
+					
+					<OPTION value="03"
+						>Entrada</OPTION>
+					
+					<OPTION value="06"
+						>Entrada interior</OPTION>
+					
+					<OPTION value="01"
+						>Intermedia</OPTION>
+					
+					<OPTION value="11"
+						>Límite de maniobras</OPTION>
+					
+					<OPTION value="05"
+						>Maniobras</OPTION>
+					
+					<OPTION value="08"
+						>Otras</OPTION>
+					
+					<OPTION value="10"
+						>Retroceso</OPTION>
+					
+					<OPTION value="04"
+						>Salida</OPTION>
+					
+					<OPTION value="07"
+						>Salida totalizadora</OPTION>
+					
+					<OPTION value="09"
+						>Zona de maniobras</OPTION>
+					
+				</SELECT></TD>
+				<TD class="agpcontenido">Balizas señal:</TD>
+				<TD><SELECT class="agpselect1" name="DOT_BALIZAS_SENNAL">
+					<OPTION value=""></OPTION>
+					
+					<OPTION value="01"
+						>Con baliza previa y de señal</OPTION>
+					
+					<OPTION value="03"
+						>Sin balizas</OPTION>
+					
+					<OPTION value="02"
+						>Sólo baliza de señal</OPTION>
+					
+				</SELECT></TD>
+			</TR>
+			<TR>
+				<TD class="agpcontenido">Particularidades señal:</TD>
+				<TD><SELECT class="agpselect1" name="PARTICULARIDADES_SENNAL">
+					<OPTION value=""></OPTION>
+					
+					<OPTION value="03"
+						>Alfanumérica</OPTION>
+					
+					<OPTION value="01"
+						>Alta</OPTION>
+					
+					<OPTION value="02"
+						>Baja</OPTION>
+					
+					<OPTION value="04"
+						>Indicadora de dirección</OPTION>
+					
+					<OPTION value="07"
+						>Otra</OPTION>
+					
+				</SELECT></TD>
+				<TD class="agpcontenido">Visibilidad infraestructura:</TD>
+				<TD><SELECT class="agpselect1" name="VISIBILIDAD_INFRAEST">
+					<OPTION value=""></OPTION>
+					
+					<OPTION value="01"
+						>Buena</OPTION>
+					
+					<OPTION value="02"
+						>Mala</OPTION>
+					
+					<OPTION value="03"
+						>Regular</OPTION>
+					
+				</SELECT></TD>
+			</TR>
+			<TR>
+				<TD class="agpcontenido">Transición entre sistemas de señalización:</TD>
+				<TD><SELECT class="agpselect1" name="SIST_SENALIZACION">
+					<OPTION value=""></OPTION>
+					
+					<OPTION value="02"
+						>De señaliz. en cabina a señaliz. lateral</OPTION>
+					
+					<OPTION value="01"
+						>De señaliz. lateral a señaliz. en cabina</OPTION>
+					
+					<OPTION value="03"
+						>De un sistema de señalización en cabina a otro</OPTION>
+					
+				</SELECT></TD>
+				<TD class="agpcontenido">Meteorología:</TD>
+				<TD><SELECT class="agpselect1" name="CDGO_METEO">
+					<OPTION value=""></OPTION>
+					
+					<OPTION value="01"
+						>Despejado</OPTION>
+					
+					<OPTION value="04"
+						>Granizo</OPTION>
+					
+					<OPTION value="02"
+						>Lluvia</OPTION>
+					
+					<OPTION value="07"
+						>Niebla</OPTION>
+					
+					<OPTION value="05"
+						>Nieve</OPTION>
+					
+					<OPTION value="03"
+						>Tormenta</OPTION>
+					
+					<OPTION value="06"
+						>Viento fuerte</OPTION>
+					
+				</SELECT></TD>
+			</TR>
+			<TR>
+				<TD class="agpcontenido">Velocidad:</TD>
+				<TD><INPUT type="text" class="agptexto1" name="VELOCIDAD_TREN"
+					value="0.0" />
+				</TD>
+				<!--@INC000000925378@INDRA.SCEXUF2.SDC@12/01/2015@INICIO
+					98470 Fallo en aplicación Agrypa -->
+				<TD class="agpcontenido">Número de señal:</TD>
+				<TD><INPUT type="text" class="agptexto1" name="NUM_SENAL"
+					value="" />
+				</TD>
+				<!-- @INC000000925378@INDRA.SCEXUF2.SDC@12/01/2015@FIN -->
+				
+			</TR>
+			<TR>
+				<TD><br/></TD>
+			</TR>
+			<TR>
+				
+				<!--@INC000000925378@INDRA.SCEXUF2.SDC@12/01/2015@INICIO
+					98470 Fallo en aplicación Agrypa -->
+				
+				<TD class="agpcontenido">Datos de valoración y observaciones:</TD>
+				
+				<!-- @INC000000925378@INDRA.SCEXUF2.SDC@12/01/2015@FIN -->
+				
+			</TR>
+			<TR>
+				<TD colspan='4' align="center">
+					
+					<TEXTAREA align="center" rows='5' cols='175' type="text" class="agptexto1" id="OBSERV_EV_CIR" name="OBSERV_EV_CIR"></TEXTAREA>
+				</TD>
+			</TR>
+			<TR>
+				<TD><br/></TD>
+			</TR>
+			<TR>
+				<TD colspan="4">
+				<HR />
+				</TD>
+			</TR>
+			<TR>
+				<TD><br/></TD>
+			</TR>
+			<TR>
+				<TD colspan="4" class="agpcontenido"><b>Valoración GEMS/SHELL de Causas y Errores del Suceso</b></TD>
+			</TR>
+			<TR>
+				<TD><br/></TD>
+			</TR>
+			<TR>
+				<TD class="agpcontenido">GEMS:</TD>
+				<TD><SELECT class="agpselect1" name="GEMS">
+					<OPTION value=""></OPTION>
+					
+					<OPTION value="03"
+						>Error de conocimiento - E(c)</OPTION>
+					
+					<OPTION value="01"
+						>Error de lapsus - E(l)</OPTION>
+					
+					<OPTION value="02"
+						>Error de regla - E(r)</OPTION>
+					
+					<OPTION value="04"
+						>Transgresión de rutina - T(r)</OPTION>
+					
+					<OPTION value="07"
+						>Transgresión excepcional - T(e)</OPTION>
+					
+					<OPTION value="06"
+						>Transgresión por alarde - T(a)</OPTION>
+					
+					<OPTION value="05"
+						>Transgresión situacional - T(s)</OPTION>
+					
+				</SELECT></TD>
+			</TR>
+			<TR>
+				<TD class="agpcontenido">SHELL:</TD>
+				<TD><SELECT class="agpselect1" name="SHELL">
+					<OPTION value=""></OPTION>
+					
+					<OPTION value="04"
+						>EL</OPTION>
+					
+					<OPTION value="11"
+						>ELL</OPTION>
+					
+					<OPTION value="09"
+						>HEL</OPTION>
+					
+					<OPTION value="15"
+						>HELL</OPTION>
+					
+					<OPTION value="03"
+						>HL</OPTION>
+					
+					<OPTION value="10"
+						>HLL</OPTION>
+					
+					<OPTION value="01"
+						>L</OPTION>
+					
+					<OPTION value="02"
+						>LL</OPTION>
+					
+					<OPTION value="07"
+						>SEL</OPTION>
+					
+					<OPTION value="14"
+						>SELL</OPTION>
+					
+					<OPTION value="12"
+						>SHEL</OPTION>
+					
+					<OPTION value="16"
+						>SHELL</OPTION>
+					
+					<OPTION value="06"
+						>SHL</OPTION>
+					
+					<OPTION value="13"
+						>SHLL</OPTION>
+					
+					<OPTION value="05"
+						>SL</OPTION>
+					
+					<OPTION value="08"
+						>SLL</OPTION>
+					
+				</SELECT></TD>
+			</TR>
+			
+			<TR>
+				<TD><br/></TD>
+			</TR>
+			<TR>
+				<TD colspan="4">
+				<HR />
+				</TD>
+			</TR>
+			<TR>
+				<TD class="agpacciones" align="left" colspan="4"><A
+					href="javascript:guardaAnalisis();">Guardar análisis</A></TD>
+			</TR>
+		</TABLE>
+		</FORM>
+		
+		<TABLE width="100%" cellspacing="0" cellpadding="0">
+			<TR>
+				<TD>
+				<HR />
+				</TD>
+			</TR>
+			<TR>
+				<TD><br/><br/><br/></TD>
+			</TR>
+		</TABLE>
+		<DIV id="contenedorTablaArbol"><INPUT type="hidden"
+			name="ID_ARBOL" id="ID_ARBOL" value="116187" />
+		<!--@INC000000909313@INDRA.SCEXU9D.SDC@11/02/2015@INICIO
+			97473 RQ0001 Multisociedad en Agrypa -->
+		<input type="hidden" name="hayExpediente" id="hayExpediente" value="N" /> 
+		<!--@INC000000909313@INDRA.SCEXU9D.SDC@11/02/2015@FIN -->
+		</DIV>
+		<FORM method="post" action="EditarExpediente"
+			name="form_editar_expediente"><INPUT type="hidden"
+			name="ID_REG_FH" value="506245" /> <INPUT
+			type="hidden" name="CDGO_REG_FH"
+			value="FH/116261" />
+			<INPUT type="hidden" name="pestanaSeleccionada" value="">
+			<!--@INC000000955412@INDRA.SCEXU9D.SDC@18/03/2015@INICIO
+			101145 RQ0001 Ajuste de la navegación -->
+			<INPUT type="hidden" name="navegaAccion" value=""/>
+			<INPUT type="hidden" name="navegaBusqExp" value=""/>
+			<INPUT type="hidden" name="navegaValoracion" value=""/>
+			<INPUT type="hidden" name="navegaExpReg" value="506245"/>
+			<INPUT type="hidden" name="expedienteConsulta" value=""/>
+			<INPUT type="hidden" name="expBusquedaReg" value=""/>
+			<INPUT type="hidden" name="navegaBusqMedida" value=""/>
+			<INPUT type="hidden" name="navegaMedida" value=""/>
+			<INPUT type="hidden" name="navegaBusqAccion" value=""/>
+			<!-- @INC000000955412@INDRA.SCEXU9D.SDC@18/03/2015@FIN -->
+		</FORM>
+		</DIV>
+		 
+		<DIV id="tabs_docs"><INPUT type="hidden" name="ID_REG_AGP"
+			id="ID_REG_AGP" value="506245" />
+		<DIV id="contenedorDocs"><INPUT type="hidden"
+			name="ID_DCTM_FOLDER" id="ID_DCTM_FOLDER"
+			value="" />
+		</DIV>
+		</DIV>
+		<!-- INI ELE -->
+		<DIV id="tabs_det_intervinientes">
+
+		<FORM method="post" action="ConsultarInterviniente"
+			name="form_detalle_interviniente"><INPUT type="hidden"
+			name="DETALLE_INTERVINIENTE" value="false" /> <INPUT type="hidden"
+			name="ID_REG_AGP" value="506245" /> <INPUT
+			type="hidden" name="ID_REGISTRO_FH"
+			value="116261" /> <INPUT
+			type="hidden" name="ID_EV_CIRCULACION"
+			value="112234" /> <INPUT
+			type="hidden" id="ELIMINAR_INTERVINIENTE"
+			name="ELIMINAR_INTERVINIENTE" value="false" /> <INPUT type="hidden"
+			id="GUARDAR_CAMBIOS_INTERVINIENTE"
+			name="GUARDAR_CAMBIOS_INTERVINIENTE" value="false" />
+			<INPUT type="hidden"
+			id="GUARDAR_CAMBIOS_JORNADA"
+			name="GUARDAR_CAMBIOS_JORNADA" value="false" />
+			<INPUT type="hidden" value="0" id="CONTADOR_SERVLET2" name="CONTADOR_SERVLET2">
+			<INPUT type="hidden" name="pestanaSeleccionada" value="">
+			<!--@INC000000955412@INDRA.SCEXU9D.SDC@18/03/2015@INICIO
+			101145 RQ0001 Ajuste de la navegación -->
+			<INPUT type="hidden" name="navegaAccion" value=""/>
+			<INPUT type="hidden" name="navegaBusqExp" value=""/>
+			<INPUT type="hidden" name="navegaValoracion" value=""/>
+			<INPUT type="hidden" name="navegaExpReg" value=""/>
+			<INPUT type="hidden" name="expedienteConsulta" value=""/>
+			<INPUT type="hidden" name="expBusquedaReg" value=""/>
+			<INPUT type="hidden" name="navegaBusqMedida" value=""/>
+			<INPUT type="hidden" name="navegaMedida" value=""/>
+			<INPUT type="hidden" name="navegaBusqAccion" value=""/>
+			<!-- @INC000000955412@INDRA.SCEXU9D.SDC@18/03/2015@FIN -->
+			
+		<DIV id="dialogoNuevoInterviniente" class="agppopup">
+		<div class="tl">
+		<div class="tr">
+		<div class="tc"></div>
+		</div>
+		</div>
+		<div class="ml">
+		<div class="mr">
+		<div class="mc" style="text-align: center;">
+		<TABLE align='center'>
+			<TR>
+			 <TD height="17" class="agpsubtitulo"><SPAN>Añadir interviniente</SPAN></TD>
+			</TR>
+			<TR>
+				<TD align="center">
+				<TABLE cellspacing="0" cellpadding="0">
+					<tr>
+						<td class="agpcontenido" align="right">Principal/Secundario:</td>
+						<TD><SELECT class="agpselect1" 
+							id="B_PRINCIPAL_NUEVO" name="B_PRINCIPAL_NUEVO">
+							<OPTION value="S" selected>Principal</OPTION>
+							<OPTION value="N">Secundario</OPTION>
+						</SELECT></TD>
+					</tr>
+					<!--<tr><td class="agpcontenido" align="left" colspan="2">
+												Introduzca la matrícula o DNI del interviniente:	
+											</td></tr>
+											-->
+					<tr>
+						<td class="agpcontenido" align="right">Matrícula:</td>
+						<td><INPUT type="text" class="agptexto1"
+							id="INTERV_MATR_NUEVO" name="INTERV_MATR_NUEVO" size="28"/></td>
+					</tr>
+					<tr>
+						<td class="agpcontenido" align="right">DNI:</td>
+						<td><INPUT type="text" class="agptexto1"
+							id="INTERV_DNI_NUEVO" name="INTERV_DNI_NUEVO" size="28"/></td>
+					</tr>
+					<tr>
+						<td class="agpcontenido" align="right">Tipo interviniente:</td>
+						<TD><select class="agpselect1" id="TIPO_INTERVINIENTE_NUEVO" name="TIPO_INTERVINIENTE_NUEVO" >
+						
+					<option value="01" >Operador de Renfe</option>
+					
+					<option value="02" >Personal externo a Renfe</option>
+					
+					<option value="03" >Testigo</option>
+					
+					</select></TD>
+					</tr>
+				</TABLE>
+				</TD>
+			</TR>
+		</TABLE>
+		<br>
+		<input type="button" value="Aceptar" class="agpsubmit"
+			onfocus="this.blur();"
+			onclick="cerrarDialogoNuevoIntervinienteAceptar()"> <input
+			type="button" value="Cancelar" class="agpsubmit"
+			onfocus="this.blur();"
+			onclick="cerrarDialogoNuevoIntervinienteCancelar()"></div>
+		</div>
+		</div>
+		<div class="bl">
+		<div class="br">
+		<div class="bc"></div>
+		</div>
+		</div>
+		</DIV>
+		<TABLE cellspacing="0" cellpadding="0" width="100%">
+			<TR>
+	       		<TD height="17" class="agpsubtitulo"><SPAN>INTERVINIENTES EN EL SUCESO</SPAN></TD>
+	        </TR>
+	        <TR>
+				<TD><br/></TD>
+			</TR>
+			
+			<TR>
+				<TD align="center">
+				<TABLE cellspacing="0" cellpadding="0"
+					class="display intervinientes" border="0">
+					<THEAD>
+						<TR>
+							<TH style="width: 21px"></TH>
+							<TH>DNI</TH>
+							<TH>Matricula</TH>
+							<TH>Nombre</TH>
+							<TH>Primer Apellido</TH>
+							<TH>Segundo Apellido</TH>
+							<TH>Empresa</TH>
+							<TH>Principal/Secundario</TH>
+						</TR>
+					</THEAD>
+					<TBODY>
+						
+						<TR>
+							<TD style="width: 21px"><INPUT type="checkbox"
+								name="ID_INTERVINIENTE"
+								value="213298"
+								onclick="seleccionarUnico(document.form_detalle_interviniente, this);" />
+							</TD>
+							<TD>51987609L
+							</TD>
+							<TD>6863070
+							</TD>
+							<TD>DAVID
+							</TD>
+							<TD>ROMERO
+							</TD>
+							<TD>RODRIGUEZ
+							</TD>
+							<TD>RENFE
+							</TD>
+							<TD>Principal
+							</TD>
+						</TR>
+						
+					</TBODY>
+
+				</TABLE>
+
+				</TD>
+			</TR>
+
+			<TR>
+				<TD class="agpacciones" align="left"><A
+					href="javascript:consultaInterviniente();">Consultar</A> 
+					
+					| <A href="javascript:eliminarInterviniente();">Eliminar interviniente</A> 
+					
+					| <A href="javascript:abrirDialogoNuevoInterviniente();">Añadir interviniente</A>
+				</TD>
+			</TR>
+			<BR></BR>
+			<BR></BR>
+			
+		</TABLE>
+		<!-- Fin tabla -->
+
+				<DIV id="consultaInterviniente" ></DIV>
+
+		</FORM>
+		</DIV>
+		<!-- Fin pestaña Intervinientes --> <!-- FIN ELE -->
+
+		<DIV id="tabs_det_consultas">
+		<TABLE cellspacing="20" cellpadding="0" width="100%">
+			<TR>
+				<TD class="agpacciones"><a
+					href="http://gtmweb.renfe.es/GTM" target="_blank">GTM</a></TD>
+			</TR>
+			<TR>
+				<TD class="agpacciones"><a
+					href="http://cpun.red.sir/ibi_apps/WFServlet?IBIC_server=WEBSERN4&IBIF_ex=PFGME100&RED=INTRANET&WEBFOCUS=/ibi_apps/WFServlet%3FIBIC_server%3DWEBSERN4" target="_blank">SACIM 2000</a></TD>
+			</TR>
+			
+			<TR>
+				<TD class="agpacciones"><a
+					href="http://cpun.red.sir/ibi_apps/WFServlet?IBIC_server=WEBSERN4&IBIF_ex=PFGMEX12&SER1=Km.%20Recorridos&SER2=Km.%20Faltan/Exceden&KMS_TELOC=%20%20%20%20%20%20%20%20341.554&LOCOMO=334005" target="_blank">SIGLO
+				- últimos servicios</a></TD>
+			</TR>
+			<TR>
+				<TD class="agpacciones"><a
+					href="http://cpun.red.sir/ibi_apps/WFServlet?IBIC_server=WEBSERN4&IBIF_ex=PFGMEX10&SERI=253&CDGO_UIC=957102530178&LOCOMO=334005" target="_blank">SIGLO
+				- ciclo mantenimiento</a></TD>
+			</TR>
+			<TR>
+				<TD class="agpacciones"><a
+					href="http://cpun.red.sir/ibi_apps/WFServlet?IBIC_server=WEBSERN4&IBIF_ex=PFGMEX11&SERI=253&SER1=KILOMETROS%20GENERALES&SER2=KILOMETROS%20TELOC&LOCOMO=334005" target="_blank">SIGLO
+				- ficha técnica</a></TD>
+			</TR>
+			<TR>
+				<TD class="agpacciones"><a
+					href="http://cpun.red.sir/ibi_apps/WFServlet?IBIC_server=WEBSERN4&IBIF_ex=PFGMEX13&SERI=251&SER1=KILOMETROS%20MENSUALES&LOCOMO=334005" target="_blank">SIGLO
+				- km mensuales</a></TD>
+			</TR>
+			
+			<TR>
+				<TD class="agpacciones"><a
+					href="http://gifo.circulacion.adif.es/GIFO/inicio.html" target="_blank">GIFO/Integria</a></TD>
+			</TR>
+			<TR>
+				<TD class="agpacciones"><a
+					href="http://copernico.sir.renfe.es/" target="_blank">COPERNICO</a></TD>
+			</TR>
+			<TR>
+				<TD class="agpacciones"><a
+					href="http://ares.sir.renfe.es/AresWeb/inicio.html" target="_blank">ARES</a></TD>
+			</TR>
+			<TR>
+				<TD class="agpacciones"><a
+					href="http://mitweb.renfe.sir/CIMA/" target="_blank">SIM</a></TD>
+			</TR>
+			<TR>
+				<TD class="agpacciones"><a
+					href="http://habilita.sir.renfe.es/ASG" target="_blank">HABILITA</a></TD>
+			</TR>
+			<TR>
+				<TD class="agpacciones"><a
+					href="http://acia.sir.renfe.es/" target="_blank">ACIA</a></TD>
+			</TR>
+			<TR>
+				<TD class="agpacciones"><a
+					href="http://itv.sir.renfe.es/ITVFront" target="_blank">GITMS</a></TD>
+			</TR>
+			<TR>
+				<TD class="agpacciones"><a
+					href="http://segur.cir.sir/SC/SC.htm" target="_blank">DIV/DEC</a></TD>
+			</TR>
+			<TR>
+				<TD class="agpacciones"><a
+					href="https://gesplan.sir.renfe.es/code/Portal.aspx" target="_blank">Gestor Planeta</a></TD>
+			</TR>
+		</TABLE>
+		</DIV>
+		</DIV>
+		</TD>
+	</TR>
+</TABLE>
+<FORM method="post" action="ObtenerPDF" name="form_obtener_pdf" target="_blank">
+
+	<INPUT type="hidden" name="PDF_NOMBRE" id="PDF_NOMBRE" value="FH/116261_detalle_registro_20190717145055.pdf"/>
+	<INPUT type="hidden" name="PDF_HTML" id="PDF_HTML" value=""/>
+</FORM>
+            	
+            	
+<FORM method="post" action="ObtenerPDF" name="form_obtener_pdf_interviniente" target="_blank">
+	<INPUT type="hidden" name="PDF_NOMBRE" id="PDF_NOMBRE" value="detalle_interviniente_20190717145055.pdf"/>
+	<INPUT type="hidden" name="PDF_HTML" id="PDF_HTML" value=""/>
+</FORM>
+<!--------------------------------------------- Contenido Fin (max-width: 800px) ------------------------------------------------------>
+
+
+<!--Inicio Zona Pdf-->
+	<DIV id="zonaPDF" style="display:none">
+		<TABLE cellspacing="0" cellpadding="0">
+			<TR>
+	           	<TD colspan="2"><h2>DETALLE DEL REGISTRO   -  FH/116261<h2></TD>
+	        </TR>
+        </TABLE>
+        
+        <BR>
+		<h2>DATOS GENERALES</h2><hr>
+		<TABLE>
+		<TR>
+		<TD colspan="8"class="campo">Cod. Registro : <span class="texto">FH/116261</span></TD>
+		</TR>
+		<TR>
+		<TD colspan="4" class="campo">Estado : <span class="texto">Registro</span></TD>
+		<TD colspan="4" class="campo">Fecha de estado : <span class="texto">17/07/2019 08:49:35</span></TD>
+		</TR>
+		<TR>
+		
+		<TD colspan="8"class="campo">Descripción sistema de origen  : <span class="texto">ACIA: TREN 194 NO EFECTÚA LA PARADA COMERCIAL GRAFIADA EN LA ESTACIÓN DE LEGANÉS, SE INFORMA AL RESPONSABLE DE CIRCULACIÓN DE FUENLABRADA QUE ASEGURE LA PARADA EN VÍA 1 A LA ESPERAR DE LA LLEGADA DE LOS VIAJEROS EN TREN DE CERCANÍAS.
+COPERNICO: Maquinista manifiesta haberse pasado la parada de Leganes.</span></TD>
+		</TR>
+		<TR>
+		<TD colspan="8"class="campo">Descripción secuencial suceso : <span class="texto">Tren Talgo de Larga Distancia procedente de Madrid-Chamartín y con destino Badajoz, no efectúa la parada comercial prescrita en la estación de Leganés.</span></TD>
+		
+		</TR>
+		<TR>
+		<TD colspan="2" class="campo">Entrada manual : <span class="texto">N</span></TD>
+		</TR>
+		<TR>
+		<TD colspan="4" class="campo">Fecha inicio suceso : <span class="texto">11/07/2019 17:15:00</span></TD>
+		<TD colspan="4" class="campo">Fecha fin suceso : <span class="texto"></span></TD>
+		</TR>
+
+		<TR>
+		<TD colspan="2" class="campo">Núm. Tren : <span class="texto">00194</span></TD>
+		<TD colspan="2" class="campo">Núm. UIC : <span class="texto">957103340056</span></TD>
+		<TD colspan="2" class="campo">Núm. Vehículo : <span class="texto">334005</span></TD>
+		<TD colspan="2" class="campo">Serie : <span class="texto">334</span></TD>
+		</TR>
+
+		
+
+		<TR>
+		
+		<TD colspan="2" class="campo">Tipo Circulación : <span class="texto">Tren</span></TD>
+		
+		<TD colspan="2" class="campo">E. Operacional : <span class="texto">L. Distancia</span></TD>
+		</TR>
+		
+		<TR>
+		<TD colspan="2" class="campo">Gerencia : <span class="texto">CENTRO</span></TD>
+		
+		<TD colspan="2" class="campo">Lugar : <span class="texto">01 - Estación</span></TD>
+		
+		<TD colspan="2" class="campo">Línea : <span class="texto">0500 - BIF. PLANETARIO / VALENCIA DE ALCANTARA </span></TD>
+		
+		<TD colspan="2" class="campo">Estación : <span class="texto">35001 - LEGANES                                                                         </span></TD>
+		</TR>
+		<TR>
+		
+		<TD colspan="2" class="campo">Entre : <span class="texto"></span></TD>
+		
+		<TD colspan="2" class="campo">Y : <span class="texto"></span></TD>
+		<TD colspan="2" class="campo"> PK : <span class="texto">0</span></TD>
+		<TD colspan="2" class="campo">Otro Lugar : <span class="texto">LEGANÉS</span></TD>		
+		</TR>
+
+		
+		</TABLE>
+		
+		
+		<br>
+		<h2>DETALLE ACIA</h2><hr>
+		<table>
+		<tr>
+		<TD colspan="8" class="campo">Estado AGRYPA: <span class="texto">Aprobado</span></TD>
+		
+		</tr>
+		
+	           <TR>
+	           <TD class="campo" colspan="4">Fecha del suceso: <span class="texto">11/07/2019 17:15:00</span></TD>
+	           
+	           
+	           
+	           <TD class="campo" colspan="4">Hora del suceso: <span class="texto">17</span></TD>
+	           </TR>
+	           
+	           <TR>
+	           <TD class="campo" colspan="4">Vehículo: <span class="texto">957103340056</span></TD>
+	           
+	           
+	           
+	           <TD class="campo" colspan="4">Descripción de Hechos y Lugar: <span class="texto">TREN 194 NO EFECTÚA LA PARADA COMERCIAL GRAFIADA EN LA ESTACIÓN DE LEGANÉS, SE INFORMA AL RESPONSABLE DE CIRCULACIÓN DE FUENLABRADA QUE ASEGURE LA PARADA EN VÍA 1 A LA ESPERAR DE LA LLEGADA DE LOS VIAJEROS EN TREN DE CERCANÍAS.
+LOS VIAJEROS LLEGAN A FUENLABRADA EN TREN DE CERCANÍAS 27506 Y EFECTÚA SU SALIDA A LAS 17:35 CON 29 MINUTOS DE RETRASO
+SE AVISA A LA GERENCIA DE SEGURIDAD DE RENFE OPERADORA</span></TD>
+	           </TR>
+	           
+	           <TR>
+	           <TD class="campo" colspan="4">Calificación de suceso: <span class="texto">Incidencia-Anomalía</span></TD>
+	           
+	           
+	           
+	           <TD class="campo" colspan="4">Denominación del suceso: <span class="texto">Error Itinerario (Entrada/Salida)</span></TD>
+	           </TR>
+	           
+	           <TR>
+	           <TD class="campo" colspan="4">Código suceso: <span class="texto">201903125</span></TD>
+	           
+	           
+	           
+	           <TD class="campo" colspan="4">Operador afectado: <span class="texto">Renfe Viajeros</span></TD>
+	           </TR>
+	           
+	           <TR>
+	           <TD class="campo" colspan="4">Denominación de la circulación: <span class="texto">Tren</span></TD>
+	           
+	           
+	           
+	           <TD class="campo" colspan="4">Clase de transporte: <span class="texto">Viajeros</span></TD>
+	           </TR>
+	           
+	           <TR>
+	           <TD class="campo" colspan="4">Datos de Tren / Maniobra: <span class="texto">194</span></TD>
+	           
+	           
+	           
+	           <TD class="campo" colspan="4">Velocidad real del Tren / Maniobra: <span class="texto">0</span></TD>
+	           </TR>
+	           
+	           <TR>
+	           <TD class="campo" colspan="4">Velocidad Máxima Permitida: <span class="texto">0</span></TD>
+	           
+	           
+	           
+	           <TD class="campo" colspan="4">Personal implicado: <span class="texto">6863070</span></TD>
+	           </TR>
+	           
+	           <TR>
+	           <TD class="campo" colspan="4">Composición del Tren: <span class="texto">957103340056</span></TD>
+	           
+	           
+	           
+	           <TD class="campo" colspan="4">Contiene mercancías peligrosas: <span class="texto">N</span></TD>
+	           </TR>
+	           
+	           <TR>
+	           <TD class="campo" colspan="4">Lugar: <span class="texto">ADIF Convencional</span></TD>
+	           
+	           
+	           
+	           <TD class="campo" colspan="4">Gerencia Territorial: <span class="texto">CENTRO</span></TD>
+	           </TR>
+	           
+	           <TR>
+	           <TD class="campo" colspan="4">Comunidad Autónoma: <span class="texto">Madrid</span></TD>
+	           
+	           
+	           
+	           <TD class="campo" colspan="4">Provincia: <span class="texto">Madrid</span></TD>
+	           </TR>
+	           
+	           <TR>
+	           <TD class="campo" colspan="4">Tipo de Lugar: <span class="texto">Estación ADIF Convencional</span></TD>
+	           
+	           
+	           
+	           <TD class="campo" colspan="4">DEC: <span class="texto"></span></TD>
+	           </TR>
+	           
+	           <TR>
+	           <TD class="campo" colspan="4">Paso a Nivel: <span class="texto">N</span></TD>
+	           
+	           
+	           
+	           <TD class="campo" colspan="4">Desde Estación (código): <span class="texto">35001</span></TD>
+	           </TR>
+	           
+	           <TR>
+	           <TD class="campo" colspan="4">Desde Estación (descripción): <span class="texto">LEGANES</span></TD>
+	           
+	           
+	           
+	           <TD class="campo" colspan="4">Hasta Estación (código): <span class="texto"></span></TD>
+	           </TR>
+	           
+	           <TR>
+	           <TD class="campo" colspan="4">Hasta Estación (descripción): <span class="texto"></span></TD>
+	           
+	           
+	           
+	           <TD class="campo" colspan="4">Tipo de Estación: <span class="texto">Estación</span></TD>
+	           </TR>
+	           
+	           <TR>
+	           <TD class="campo" colspan="4">Línea: <span class="texto">BIF. PLANETARIO / VALENCIA DE ALCANTARA</span></TD>
+	           
+	           
+	           
+	           <TD class="campo" colspan="4">Tipo de Línea: <span class="texto">TRAYECTO B</span></TD>
+	           </TR>
+	           
+	           <TR>
+	           <TD class="campo" colspan="4">Punto Kilométrico: <span class="texto">0</span></TD>
+	           
+	           
+	           
+	           <TD class="campo" colspan="4">Organismo Gestor: <span class="texto">RENFE Viajeros</span></TD>
+	           </TR>
+	           
+	           <TR>
+	           <TD class="campo" colspan="4">Tipo de Bloqueo: <span class="texto"></span></TD>
+	           
+	           
+	           
+	           <TD class="campo" colspan="4">Tipo de Vía: <span class="texto">0</span></TD>
+	           </TR>
+	           
+	           <TR>
+	           <TD class="campo" colspan="4">Referencias Geográficas: <span class="texto"></span></TD>
+	           
+	           
+	           
+	           <TD class="campo" colspan="4">Número de Señal: <span class="texto"></span></TD>
+	           </TR>
+	           
+	           <TR>
+	           <TD class="campo" colspan="4">Tipo de Señal: <span class="texto"></span></TD>
+	           
+	           
+	           
+	           <TD class="campo" colspan="4">Señal - Dotación de Balizas: <span class="texto"></span></TD>
+	           </TR>
+	           
+	           <TR>
+	           <TD class="campo" colspan="4">Señal - Particularidades: <span class="texto"></span></TD>
+	           
+	           
+	           
+	           <TD class="campo" colspan="4">Señal - Visibilidad de la infraestructura: <span class="texto"></span></TD>
+	           </TR>
+	           
+	           <TR>
+	           <TD class="campo" colspan="4">Meteorología - Tipología: <span class="texto"></span></TD>
+	           
+	           
+	           
+	           <TD class="campo" colspan="4">Meteorología - Intensidad: <span class="texto"></span></TD>
+	           </TR>
+	           
+	           <TR>
+	           <TD class="campo" colspan="4">Tipo causa: <span class="texto">Fallo por Factor Humano</span></TD>
+	           
+	           
+	           
+	           <TD class="campo" colspan="4">Tipo fallo compuesto: <span class="texto"></span></TD>
+	           </TR>
+	           
+	           
+		</table>					
+		
+		
+		<br>
+		<h2>DETALLE COPERNICO</h2><hr>
+		<table>
+		<tr>
+		<TD colspan="8" class="campo">Estado AGRYPA: <span class="texto">Aprobado</span></TD>
+		
+		</tr>
+		
+	           <TR>
+	           <TD class="campo" colspan="4">Fecha / Hora inicio incidencia: <span class="texto">11/07/2019 17:00:00</span></TD>
+	           
+	           
+	           
+	           <TD class="campo" colspan="4">Material motor: <span class="texto"></span></TD>
+	           </TR>
+	           
+	           <TR>
+	           <TD class="campo" colspan="4">Material remolcado: <span class="texto"></span></TD>
+	           
+	           
+	           
+	           <TD class="campo" colspan="4">Descripción: <span class="texto">Maquinista manifiesta haberse pasado la parada de Leganes.</span></TD>
+	           </TR>
+	           
+	           <TR>
+	           <TD class="campo" colspan="4">Tipo: <span class="texto">T</span></TD>
+	           
+	           
+	           
+	           <TD class="campo" colspan="4">Estación inicio: <span class="texto">35001</span></TD>
+	           </TR>
+	           
+	           <TR>
+	           <TD class="campo" colspan="4">Estación fin: <span class="texto">35001</span></TD>
+	           
+	           
+	           
+	           <TD class="campo" colspan="4">Intervinientes: <span class="texto">6849657|6863070|2800597</span></TD>
+	           </TR>
+	           
+	           <TR>
+	           <TD class="campo" colspan="4">Maquinista / Interventor: <span class="texto">Maquinista|Maquinista|Interventor</span></TD>
+	           
+	           
+	           
+	           <TD class="campo" colspan="4">Fecha / Hora fin incidencia: <span class="texto">11/07/2019 17:00:00</span></TD>
+	           </TR>
+	           
+	           <TR>
+	           <TD class="campo" colspan="4">Servicio (nº tren): <span class="texto">00194</span></TD>
+	           
+	           
+	           
+	           <TD class="campo" colspan="4">Área: <span class="texto">SC SUR</span></TD>
+	           </TR>
+	           
+	           <TR>
+	           <TD class="campo" colspan="4">SubArea: <span class="texto">LD DIURNO SUR</span></TD>
+	           
+	           
+	           
+	           <TD class="campo" colspan="4">Producto: <span class="texto">Talgo</span></TD>
+	           </TR>
+	           
+	           <TR>
+	           <TD class="campo" colspan="4">Serie: <span class="texto">Talgo V I</span></TD>
+	           
+	           
+	           
+	           <TD class="campo" colspan="4">Grupo incidencia: <span class="texto">GESTION OPERADOR</span></TD>
+	           </TR>
+	           
+	           <TR>
+	           <TD class="campo" colspan="4">Tipo incidencia: <span class="texto">Infracción Reglamento ( Operador)</span></TD>
+	           
+	           
+	           
+	           <TD class="campo" colspan="4">Reparado: <span class="texto">N</span></TD>
+	           </TR>
+	           
+	           <TR>
+	           <TD class="campo" colspan="4">Consecuencias y Previsiones: <span class="texto">Se gestiona con personal de Leganes encaminar en siguiente cercanias para Fuenlabrada donde les esta esperando el Talgo.</span></TD>
+	           
+	           
+	           
+	           <TD class="campo" colspan="4">Acciones Comerciales: <span class="texto"></span></TD>
+	           </TR>
+	           
+	           <TR>
+	           <TD class="campo" colspan="4">Consecuencias - Tiempo retraso: <span class="texto">029</span></TD>
+	           
+	           
+	           
+	           <TD class="campo" colspan="4">Consecuencias - Servicio Transbordado: <span class="texto">N</span></TD>
+	           </TR>
+	           
+	           <TR>
+	           <TD class="campo" colspan="4">Consecuencias - Número Clientes Transbordados: <span class="texto">000</span></TD>
+	           
+	           
+	           
+	           <TD class="campo" colspan="4">Consecuencias - Número Clientes Indemnizables: <span class="texto">000</span></TD>
+	           </TR>
+	           
+	           <TR>
+	           <TD class="campo" colspan="4">Código: <span class="texto">8D6A619006EA632DE0535C4CF50ADB4B</span></TD>
+	           
+	           
+	           
+	           <TD class="campo" colspan="4">Estado COPERNICO: <span class="texto">1</span></TD>
+	           </TR>
+	           
+	           
+		</table>					
+		
+		
+		
+		<br>
+		<h2>INTERVINIENTES</h2><hr>
+		<table>
+		
+		<tr>
+		<td class="campo"><span class="texto"> 51987609L - 
+		6863070 - 
+		DAVID  
+		ROMERO  
+		RODRIGUEZ - 
+		RENFE -
+		Principal </span></td>
+		</tr>
+		
+		
+		</table>
+		
+		
+		
+		
+		
+		<br>
+		<h2>ANÁLISIS</h2><hr>
+		<table>
+		
+		<tr>
+		
+		
+		
+		<td colspan="2" class="campo">Consecuencias : <span class="texto">Sin consecuencias</span></td>
+		
+		<td colspan="2" class="campo">Situación / Función : <span class="texto">No para en la estación</span></td>
+		</tr>
+		
+		
+		<tr>
+		
+		
+		<td colspan="2" class="campo">Incidencia / Anomalía : <span class="texto">Incumplimiento Parada Comercial</span></td>
+		
+		<td colspan="2" class="campo">Distractores : <span class="texto"></span></td>
+		</tr>
+		
+		<tr>
+		
+		<td colspan="2" class="campo">Accionamiento de Freno : <span class="texto"></span></td>
+		
+		<td colspan="2" class="campo">Particularidades : <span class="texto"></span></td>
+		</tr>
+		
+		<tr>
+		<td colspan="2" class="campo">Tiempo de retraso : <span class="texto">029</span></td>
+		
+		<td colspan="2" class="campo">Entorno operacional : <span class="texto">L. Distancia</span></td>
+		</tr>
+		
+		<tr>
+		
+		<td colspan="2" class="campo">Control de alcohol : <span class="texto"></span></td>
+		
+		<td colspan="2" class="campo">Modo de conducción : <span class="texto"></span></td>
+		</tr>
+		
+		<tr>
+		
+		<td colspan="2" class="campo">Índice de alcohol : <span class="texto"></span></td>
+		
+		<td colspan="2" class="campo">Sistema de seguridad : <span class="texto"></span></td>
+		</tr>
+		
+		<tr>
+		
+		<td colspan="2" class="campo">Control de drogas : <span class="texto"></span></td>
+		
+		<td colspan="2" class="campo">Tipo de sistema degradados : <span class="texto"></span></td>
+		</tr>
+		
+		<tr>
+		
+		<td colspan="2" class="campo">Rebase señal : <span class="texto">No</span></td>
+		
+		<td colspan="2" class="campo">Tipo de bloqueo : <span class="texto"></span></td>
+		</tr>
+		
+		<tr>
+		
+		<td colspan="2" class="campo">Tipo de señal : <span class="texto"></span></td>
+		
+		<td colspan="2" class="campo">Balizas señal : <span class="texto"></span></td>
+		</tr>
+		
+		<tr>
+		
+		<td colspan="2" class="campo">Particularidades señal : <span class="texto"></span></td>
+		
+		<td colspan="2" class="campo">Visibilidad infraestructura : <span class="texto"></span></td>
+		</tr>
+		
+		<tr>
+		
+		<td colspan="2" class="campo">Transición entre sistemas de señalización : <span class="texto"></span></td>
+		
+		<td colspan="2" class="campo">Meteorología : <span class="texto"></span></td>
+		</tr>
+		
+		<tr>
+		<td colspan="2" class="campo">Velocidad : <span class="texto">0.0</span></td>
+		
+		<td colspan="2" class="campo">Número de señal : <span class="texto"></span></td>
+		
+		</tr>
+		
+		<tr>
+		
+		<td colspan="4" class="campo">Datos de valoración y observaciones : <span class="texto"></span></td>
+		
+		</tr>
+		<br>
+		<tr>
+		
+		<td colspan="2" class="campo">GEMS : <span class="texto"></span></td>
+		
+		<td colspan="2" class="campo">SHELL : <span class="texto"></span></td>
+		</tr>
+
+		<!-- EVOL 73508 -->
+		<TR>
+			<TD colspan="4" class="campo">Gravedad :<span class="texto"> 0.0  -  Leve</span>
+			</TD>
+		</TR>
+		<!-- FIN EVOL 73508 -->
+		
+		</table>
+		
+		
+		
+    </DIV>
+	        
+<!--Fin Zona Pdf-->
+
+				</DIV>
+			</DIV>
+			<DIV class="agpbottom"></DIV>
+		</DIV>
+	</DIV>	
+</DIV>
+</BODY>
+</HTML>

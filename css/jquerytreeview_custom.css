@@ -1,0 +1,26 @@
+.treeview ul {
+	background-color: transparent;
+}
+
+.treeview .hover { 
+	color: #7F7F7F; 
+	font-weight: bold;
+}
+
+.treeview a {
+	color: #7F7F7F;
+	font-size: 6pt;
+	font-weight: bold;
+	letter-spacing: 0pt;
+	font-family: Tahoma;
+	text-decoration: none;
+}
+
+.treeview  a:hover {
+	color: #7F7F7F;
+	font-size: 6pt;
+	font-weight: bold;
+	letter-spacing: 0pt;
+	font-family: Tahoma;
+	text-decoration: none;
+}

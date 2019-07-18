@@ -1,0 +1,43 @@
+.ui-jqgrid tr.ui-row-ltr td {
+	color: #7F7F7F;
+	font-size: 7pt;
+	letter-spacing: 0pt;
+	font-family: Tahoma;
+}
+
+.ui-th-ltr, .ui-jqgrid .ui-jqgrid-htable th.ui-th-ltr {
+	color: #7F7F7F;
+	font-size: 7pt;
+	letter-spacing: 0pt;
+	font-family: Tahoma;
+}
+	
+.ui-jqgrid .ui-pg-table td {
+	color: #7F7F7F;
+	font-size: 7pt;
+	letter-spacing: 0pt;
+	font-family: Tahoma;
+}
+
+.ui-jqgrid .ui-pg-input {
+	color: #7F7F7F;
+	font-size: 7pt;
+	letter-spacing: 0pt;
+	font-family: Tahoma;
+}
+
+.ui-jqgrid .ui-pg-selbox {
+	color: #7F7F7F;
+	font-size: 7pt;
+	letter-spacing: 0pt;
+	font-family: Tahoma;
+}
+
+.ui-widget-content.jqgrow.ui-row-ltr td a {
+	color: #7F7F7F;
+	font-size: 7pt;
+	font-weight: bold;
+	letter-spacing: 0pt;
+	font-family: Tahoma;
+	text-decoration: none;
+}

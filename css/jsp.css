@@ -1,0 +1,499 @@
+div.agpbienvenida {
+	background: transparent url('../img/agp/titulo_inicio.png') no-repeat center center;
+	width: 100%;
+	height: 430px;
+}
+
+td.agpcontenido{
+	color: #7F7F7F;
+	font-size: 7pt;
+	font-weight:normal;
+	letter-spacing: 0pt;
+	font-family: Tahoma;
+	padding: 5px 10px 5px 10px;
+}
+
+td.agpcontenido1{
+	color: #7F7F7F;
+	font-size: 7pt;
+	letter-spacing: 0pt;
+	font-family: Tahoma;
+	padding: 5px 10px 5px 10px;
+	font-weight: bold;
+}
+
+td.agpacciones{
+	color: #7F7F7F;
+	font-size: 8pt;
+	letter-spacing: 0pt;
+	font-family: Tahoma;
+	padding-top: 2px;
+}
+
+td.agpacciones a{
+	color: #7F7F7F;
+	font-size: 8pt;
+	font-weight: bold;
+	letter-spacing: 0pt;
+	font-family: Tahoma;
+	text-decoration: none;
+}
+
+th.agpcontenido{
+	color: #7F7F7F;
+	font-size: 7pt;
+	letter-spacing: 0pt;
+	font-family: Tahoma;
+	padding: 5px 10px 5px 10px;
+	font-weight: bold;
+	
+}
+
+input.file {
+	color: #7F7F7F;
+	font-size: 7pt;
+	letter-spacing: 0pt;
+	font-family: Tahoma;
+}
+
+input.agptexto1 {
+	color: #7F7F7F;
+	font-size: 7pt;
+	letter-spacing: 0pt;
+	font-family: Tahoma;
+}
+
+input.agptexto2 {
+	color: #7F7F7F;
+	font-size: 7pt;
+	letter-spacing: 0pt;
+	font-family: Tahoma;
+	text-align: center;
+}
+
+input.agptexto3 {
+	color: #7F7F7F;
+	font-size: 7pt;
+	letter-spacing: 0pt;
+	font-family: Tahoma;
+}
+
+input.agptexto4 {
+	color: #7F7F7F;
+	font-size: 7pt;
+	letter-spacing: 0pt;
+	font-family: Tahoma;
+	width: 89px;
+}
+
+textarea.agptexto1 {
+	color: #7F7F7F;
+	font-size: 7pt;
+	letter-spacing: 0pt;
+	font-family: Tahoma;
+}
+
+textarea.agptexto3 {
+	color: #7F7F7F;
+	font-size: 7pt;
+	letter-spacing: 0pt;
+	font-family: Tahoma;
+	background-color: #EEE;
+}
+
+select.agpselect1 {
+	color: #7F7F7F;
+	font-size: 7pt;
+	letter-spacing: 0pt;
+	font-family: Tahoma;
+	width: 150px;
+}
+
+select.agpselect2 {
+	color: #7F7F7F;
+	font-size: 7pt;
+	letter-spacing: 0pt;
+	font-family: Tahoma;
+	width: 100%;
+}
+
+select.agpselect3{
+	color: #7F7F7F;
+	font-size: 7pt;
+	letter-spacing: 0pt;
+	font-family: Tahoma;
+	width: 100px;
+}
+
+select.agpselect3click{
+	color: #7F7F7F;
+	font-size: 7pt;
+	letter-spacing: 0pt;
+	font-family: Tahoma;
+	width: auto;
+}
+
+select.agpselect4{
+	font-size: 7pt;
+	letter-spacing: 0pt;
+	font-family: Tahoma;
+	width: 90px;
+}
+
+select.agpselect5{
+	color: #7F7F7F;
+	font-size: 7pt;
+	letter-spacing: 0pt;
+	font-family: Tahoma;
+	width: 270px;
+}
+
+select.agpselect5click{
+	color: #7F7F7F;
+	font-size: 7pt;
+	letter-spacing: 0pt;
+	font-family: Tahoma;
+	width: expression(this.scrollWidth > 270 ? "auto" : "270px");
+	min-width:270px;
+}
+
+select.agpselect6{
+	color: #7F7F7F;
+	font-size: 7pt;
+	letter-spacing: 0pt;
+	font-family: Tahoma;
+	width: 470px;
+}
+
+select.agpselect6click{
+	color: #7F7F7F;
+	font-size: 7pt;
+	letter-spacing: 0pt;
+	font-family: Tahoma;
+	width: 470px;
+}
+
+select.agpselect7{
+	color: #7F7F7F;
+	font-size: 7pt;
+	letter-spacing: 0pt;
+	font-family: Tahoma;
+	width: 85px;
+}
+select.agpselect8{
+	font-size: 7pt;
+	letter-spacing: 0pt;
+	font-family: Tahoma;
+	width: 89px;
+}
+select.agpselect9{
+	color: #7F7F7F;
+	font-size: 7pt;
+	letter-spacing: 0pt;
+	font-family: Tahoma;
+	width: 267px;
+}
+select.agpselect10{
+	color: #7F7F7F;
+	font-size: 7pt;
+	letter-spacing: 0pt;
+	font-family: Tahoma;
+	width: 200px;
+}
+select.agpselect11{
+	color: #7F7F7F;
+	font-size: 7pt;
+	letter-spacing: 0pt;
+	font-family: Tahoma;
+	width: 400px;
+}
+select.agpselect12{
+	color: #7F7F7F;
+	font-size: 7pt;
+	letter-spacing: 0pt;
+	font-family: Tahoma;
+	width: 220px;
+}
+a.agpenlace1 {
+	color: #7F7F7F;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+a.agpenlace2 {
+	color: #7F7F7F;
+	font-weight: bold;
+	text-decoration: none;
+	font-size: 7pt;
+}
+
+input.agpsubmit {
+	color: white;
+	font-family: "Tahoma";
+	font-size: 7pt;
+	font-weight: bold;
+	background-color: #7F7F7F;
+	border: 1px solid;
+	border-color: #CCC;
+	cursor: pointer;
+	padding: 4px 8px 4px 8px;
+}
+
+
+div.contenedorArbol {
+	font-family: Tahoma;
+	font-size: 8pt;
+	color: #7F7F7F;
+	letter-spacing: 0pt;
+	padding-top: 10px;
+}
+
+div.agpcontenedorTabla {
+	width: 760px;
+}
+
+div.scrollHorizontal {
+	max-width: 790px;
+	overflow-x: scroll;
+}
+
+hr.agpseparador {
+	border: 1px dotted #777;
+}
+
+input.agpayuda{
+	width: 18px;
+  	height: 18px;
+  	margin: 0px 0px 0px 2px;
+  	padding: 0;
+  	border: 0; 
+	cursor: pointer;
+	background: url("../img/agp/ayuda.gif") no-repeat left top;
+}
+
+input.agpalerta{
+	width: 18px;
+  	height: 18px;
+  	margin: 0px 0px 0px 2px;
+  	padding: 0;
+  	border: 0; 
+	cursor: pointer;
+	background: url("../img/agp/alerta.gif") no-repeat left top;
+}
+
+input.agpaabrir{
+	width: 18px;
+  	height: 18px;
+  	margin: 0px 0px 0px 2px;
+  	padding: 0;
+  	border: 0; 
+	cursor: pointer;
+	background: url("../img/agp/subirfichero.gif") no-repeat left top;
+}
+
+input.agppdf{
+	width: 18px;
+  	height: 18px;
+  	margin: 0px 0px 0px 2px;
+  	padding: 0;
+  	border: 0; 
+	cursor: pointer;
+	background: url("../img/agp/pdf.png") no-repeat left top;
+}
+
+a.agpalerta{
+	width: 18px;
+  	height: 18px;
+  	margin: 0px 0px 0px 2px;
+  	padding: 0;
+  	border: 0; 
+	cursor: pointer;
+	background: url("../img/agp/forward_disabled.png") no-repeat left top;
+}
+
+div.agpcolumna1{
+	width: expression(80 + "px");
+	max-width: 80px;
+	height: 10px;
+	overflow: hidden;
+	word-wrap: normal;
+}
+
+div.agpcolumna2{
+	width: expression(200 + "px");
+	max-width: 200px;
+	min-width: 200px;
+	word-wrap: normal;
+	overflow:hidden;
+	height: 100px;
+}
+
+div.agpcolumna3{
+	display: table-cell;
+	vertical-align: middle;
+	width: expression(120 + "px");
+	max-width: 120px;
+	word-wrap: break-word;
+	overflow:hidden;
+	height: 100px;
+}
+
+div.agpcolumna4{
+	width: expression(120 + "px");
+	max-width: 120px;
+	word-wrap: break-word;
+	overflow:hidden;
+}
+div.agpcolumna5{
+	display: table-cell;
+	vertical-align: middle;
+	width: expression(120 + "px");
+	max-width: 120px;
+	word-wrap: normal;
+	overflow:hidden;
+	height: 40px;
+}
+div.agpcolumna6{
+	width: expression(200 + "px");
+	max-width: 200px;
+	min-width: 200px;
+	word-wrap: break-word;
+	overflow:hidden;
+}
+div.agpcolumna7{
+	width: expression(60 + "px");
+	max-width: 60px;
+	word-wrap: break-word;
+	overflow:hidden;
+}
+div.agpcolumna8{
+	width: expression(400 + "px");
+	max-width: 400px;
+	min-width: 200px;
+	word-wrap: normal;
+	overflow:hidden;
+	
+}
+div.agpcolumna9{
+	width: expression(150 + "px");
+	max-width: 150px;
+	min-width: 40px;
+	word-wrap: break-word;
+	overflow:hidden;
+}
+
+div.agparbolcausa{
+	border: 1px solid #AAA;
+	background-color: white;
+	padding: 8px;
+	border-radius: 8px;
+	box-shadow: 2px 2px 4px #888;
+}
+
+div.agparbolerror{
+	border: 1px solid #6B0052;
+	background-color: white;
+	padding: 8px;
+	border-radius: 8px;
+	box-shadow: 2px 2px 4px #888;
+}
+
+div.agparbolsuceso{
+	border: 1px solid #AAA;
+	background-color: white;
+	padding: 8px;
+	border-radius: 8px;
+	box-shadow: 2px 2px 4px #888;
+}
+
+.agparbolsel div{
+	background-color: #CCC;
+}
+
+div.agparboltitulo {
+	background-color: #666;
+	padding: 8px;
+	border-radius: 8px;
+	box-shadow: 2px 2px 4px #888;
+	color: white;
+	font-weight: bold;
+	font-size: 8pt;
+	letter-spacing: 0pt;
+	font-family: Tahoma;
+}
+
+div.agptoolbar{
+	float: left;
+	padding-top: 3px;
+}
+
+div.agptoolbar a{
+	color: #665874;
+	font-weight: bold;
+	text-decoration: none;
+	font-size: 7pt;
+}
+
+div.agptoolbar a:hover{
+	color: #665874;
+	font-weight: bold;
+	text-decoration: none;
+	font-size: 7pt;
+}
+
+
+div.linkContraido {     
+	cursor: pointer;
+	background: url(../img/jquerytreeview/plus.gif) no-repeat;
+	background-color: #EEE;
+	display:block;
+	font-size: 10px;
+	font-weight: bold;
+	text-align: left;
+}
+div.linkExpandido {     
+	cursor: pointer;
+	background: url(../img/jquerytreeview/minus.gif) no-repeat;
+	background-color: #EEE;
+	display:block;
+	font-size: 10px;
+	font-weight: bold;
+	text-align: left;		
+}
+div.linkContraidoCausas {     
+	cursor: pointer;
+	background: url(../img/jquerytreeview/plus.gif) no-repeat;
+	background-color: #EEE;
+	display:block;
+	font-size: 10px;
+	font-weight: normal;
+	text-align: left;
+	margin-left: 10px;
+}
+div.linkExpandidoCausas {     
+	cursor: pointer;
+	background: url(../img/jquerytreeview/minus.gif) no-repeat;
+	background-color: #EEE;
+	display:block;
+	font-size: 10px;
+	font-weight: normal;
+	text-align: left;
+	margin-left: 10px;		
+}
+
+input.botonCalendario{
+  color: #FFFFFF; 
+  font-family: "Tahoma"; 
+  font-size: 7pt;
+  font-weight: bold;
+  background-color: #7F7F7F; 
+  border:1px solid;
+  border-color: #CCCCCC;
+  cursor: pointer;
+}
+
+
+
+
+
+

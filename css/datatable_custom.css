@@ -1,0 +1,41 @@
+.datatables_filter {
+	font-size: 7pt;
+	font-weight: bold;
+	color: #7F7F7F;
+}
+
+.datatables_info {
+	border: none;
+	background: none;
+	color: #7F7F7F;
+	border-bottom: 1px solid #7F7F7F;
+	padding: 0px;
+	font-size: 7pt;
+	font-weight: bold;
+	height: 15px;
+	padding-top: 8px;
+}
+
+div.datatables_length {
+	color: #665874;
+	font-weight: bold;
+	text-decoration: none;
+	font-size: 7pt;
+}
+
+div.datatables_length select {
+	color: #7F7F7F;
+	font-size: 7pt;
+	letter-spacing: 0pt;
+	font-family: Tahoma;
+	width: 150px;
+}
+
+.datatables_filter {
+	width: 40%;
+}
+
+.datatables_paginate.ui-buttonset {
+	margin-top: -20px;
+	margin-right: 0px;
+}

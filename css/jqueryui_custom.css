@@ -1,0 +1,62 @@
+.ui-tabs .ui-tabs-nav {
+	margin: 0px;
+	padding: 0px;
+	border-bottom: solid 1px #AAA;
+}
+
+.ui-widget {
+	font-family: Tahoma;
+	font-size: 7pt;
+	letter-spacing: 0pt;
+}
+
+.ui-widget-content {
+	border: none;
+	background: none;
+}
+
+.ui-widget-header {
+	padding: 0px;
+	border-radius: 0px;
+	font-size: 7pt;
+	font-weight: bold;
+	background: none;
+	border: none;
+}
+
+table.display {
+	color: #7F7F7F;
+	font-size: 7pt;
+	letter-spacing: 0pt;
+	font-family: Tahoma;
+}
+
+table.display a {
+	color: #7F7F7F;
+	font-size: 7pt;
+	letter-spacing: 0pt;
+	font-family: Tahoma;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+table.display thead th {
+	border-bottom: 1px solid #CCC;
+	text-align: left;
+}
+
+div.dataTables_filter input {
+	color: #7F7F7F;
+	font-size: 7pt;
+	letter-spacing: 0pt;
+	font-family: Tahoma;
+}
+
+.datatables_info {
+	width: 100%;
+}
+
+.ui-buttonset .ui-button {
+	margin-left: 2px;
+	margin-right: 2px;
+}
