@@ -3,7 +3,10 @@ html, body {
   padding: 0;
   border: 0px;
 } 
-
+#datosgenerales{
+    background-color: #EEEEEE;
+   position:absolute; top: 0px; left:0px;
+}
 
 html {
 	overflow-y: scroll;
